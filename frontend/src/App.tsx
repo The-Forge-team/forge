@@ -1,8 +1,9 @@
+import LoginPage from  "./Pages/Login"
 function App() {
 
   return (
     <>
-      <h1>Forge</h1>
+      <LoginPage/>
     </>
   )
 }
