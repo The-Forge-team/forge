@@ -1,6 +1,6 @@
-import LoginPage from  "./Pages/Login"
-function App() {
+import LoginPage from "@/pages/auth/Login.tsx"
 
+function App() {
   return (
     <>
       <LoginPage/>
