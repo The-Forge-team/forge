@@ -15,7 +15,7 @@ export default function LoginPage() {
     <div className="flex flex-col p-10 md:p-20 items-center">
       <Card className="w-full md:max-w-1/2 grid md:grid-cols-[1fr_2fr] gap-6 p-6">
         <div>
-          <h3 className="text-2xl font-bold">Image</h3>
+          <h3 className="text-2xl font-bold">Imagessssbdfgbdfsg</h3>
         </div>
         <div>
           <CardHeader>
