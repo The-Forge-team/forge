@@ -1,8 +1,9 @@
-function App() {
+import LoginPage from "@/pages/auth/Login.tsx"
 
+function App() {
   return (
     <>
-      <h1>Forge</h1>
+      <LoginPage/>
     </>
   )
 }
