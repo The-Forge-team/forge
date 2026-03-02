@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -53,12 +54,12 @@ export default function LoginPage() {
                 <Button type="submit" className="hover:cursor-pointer">
                   LOG IN
                 </Button>
-                <a
-                  href="#"
+                <Link
+                  to="/forgot-password"
                   className="ml-auto inline-block text-sm hover:cursor-pointer  text-gray-500"
                 >
                   Forgot password?
-                </a>
+                </Link>
               </div>
             </div>
           </CardContent>
