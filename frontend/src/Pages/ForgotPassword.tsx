@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail } from "lucide-react";
 import illustration from "@/assets/forgot-password-illustration.png";
 
@@ -19,17 +19,18 @@ export default function ForgotPasswordPage() {
         </div>
 
  
-        <div className="space-y-2">
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">
+        <CardHeader className="space-y-2 w-full">
+          <CardTitle className="text-2xl font-bold tracking-tight text-foreground">
             Forgot Password?
-          </h1>
-          <p className="text-muted-foreground text-sm px-4">
+          </CardTitle>
+          <CardDescription className="text-muted-foreground text-sm px-4">
             Please enter your registered email address we will get back to you with the reset password link and confirmation OTP thanks
-          </p>
-        </div>
+          </CardDescription>
+        </CardHeader>
 
- 
-        <form className="w-full space-y-4" onSubmit={(e) => e.preventDefault()}>
+ <CardContent className="w-full">
+
+<form className="w-full space-y-4" onSubmit={(e) => e.preventDefault()}>
           <div className="relative group">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5 transition-colors duration-300 group-focus-within:text-primary" />
             <Input 
@@ -47,6 +48,10 @@ export default function ForgotPasswordPage() {
             SUBMIT
           </Button>
         </form>
+
+
+ </CardContent>
+        
 
       </Card>
     </div>
