@@ -9,18 +9,19 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
+import { BsPerson } from "react-icons/bs";
 
 // Dotwork Logo
 const DotworkLogo = () => (
-  <div className="flex items-center gap-2 mb-8">
+  <div className="flex items-center gap-2 mb-6">
     <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
       <TbGridDots size={18} color="white" />
     </div>
-    <span className="text-green-800 text-4xl font-semibold  tracking-tight">FORGE</span>
+    <span className="text-green-800 font-semibold text-4xl tracking-tight">Forge</span>
   </div>
 );
 
-// Right panel illustration
+// Right panel illustration (same as login)
 const RightIllustration = () => (
   <div className="relative flex flex-col items-center justify-center h-full px-10 text-white">
     {/* Background glow */}
@@ -37,7 +38,6 @@ const RightIllustration = () => (
 
     {/* Dashboard card mock */}
     <div className="relative z-10 flex items-center justify-center mb-10">
-      {/* App icons orbiting */}
       <div className="relative" style={{ width: "320px", height: "260px" }}>
         {/* Slack */}
         <div
@@ -69,8 +69,8 @@ const RightIllustration = () => (
           }}
         >
           <div className="w-7 h-7 bg-green-500 rounded-lg flex items-center justify-center">
-              <TbGridDots size={16} color="white" />
-            </div>
+            <TbGridDots size={16} color="white" />
+          </div>
         </div>
 
         {/* Google icon */}
@@ -89,7 +89,7 @@ const RightIllustration = () => (
           <FcGoogle size={26} />
         </div>
 
-        {/* Connection lines (SVG) */}
+        {/* Connection lines */}
         <svg
           className="absolute inset-0"
           width="320"
@@ -105,12 +105,7 @@ const RightIllustration = () => (
         {/* Dashboard card */}
         <div
           className="absolute rounded-xl shadow-2xl overflow-hidden"
-          style={{
-            top: "30px",
-            right: "0px",
-            width: "175px",
-            background: "white",
-          }}
+          style={{ top: "30px", right: "0px", width: "175px", background: "white" }}
         >
           <div className="flex items-center gap-1.5 px-3 py-2 border-b border-gray-100">
             <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
@@ -135,9 +130,9 @@ const RightIllustration = () => (
     </div>
 
     {/* <div className="relative z-10 text-center">
-      <h2 className="text-2xl font-bold mb-2">Connect with every application.</h2>
+      <h2 className="text-2xl font-bold mb-2">Start your journey today.</h2>
       <p className="text-green-200 text-sm leading-relaxed max-w-xs">
-        Everything you need in an easily customizable dashboard.
+        Join thousands of teams already using dotwork to streamline their workflow.
       </p>
     </div> */}
 
@@ -150,15 +145,19 @@ const RightIllustration = () => (
   </div>
 );
 
-export default function LoginPage() {
+export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
-    console.log({ email, password, rememberMe });
+    console.log({ firstName, lastName, email, password, confirmPassword, agreedToTerms });
   };
 
   return (
@@ -168,13 +167,13 @@ export default function LoginPage() {
         style={{ maxWidth: "900px", minHeight: "520px" }}
       >
         {/* Left Panel */}
-        <div className="flex-1 bg-white px-12 py-10 flex flex-col justify-center">
+        <div className="flex-1 bg-white px-12 py-8 flex flex-col justify-center">
           <DotworkLogo />
 
           <h1 className="text-3xl font-bold text-gray-900 mb-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-            Log in to your Account
+            Create an Account
           </h1>
-          <p className="text-sm text-gray-500 mb-7">Welcome back! Select method to log in:</p>
+          <p className="text-sm text-gray-500 mb-6">Get started for free. Select method to sign up:</p>
 
           {/* Social Buttons */}
           <div className="flex gap-3 mb-5">
@@ -195,10 +194,34 @@ export default function LoginPage() {
           </div>
 
           {/* Divider */}
-          <div className="flex items-center gap-3 mb-5">
+          <div className="flex items-center gap-3 mb-4">
             <div className="flex-1 h-px bg-gray-200" />
             <span className="text-xs text-gray-400">or continue with email</span>
             <div className="flex-1 h-px bg-gray-200" />
+          </div>
+
+          {/* First & Last Name */}
+          <div className="flex gap-3 mb-3">
+            <div className="relative flex-1">
+              <BsPerson size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <Input
+                type="text"
+                placeholder="First name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-blue-500 text-gray-700 placeholder:text-gray-400"
+              />
+            </div>
+            <div className="relative flex-1">
+              <BsPerson size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <Input
+                type="text"
+                placeholder="Last name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-blue-500 text-gray-700 placeholder:text-gray-400"
+              />
+            </div>
           </div>
 
           {/* Email */}
@@ -214,7 +237,7 @@ export default function LoginPage() {
           </div>
 
           {/* Password */}
-          <div className="relative mb-4">
+          <div className="relative mb-3">
             <RiLockPasswordLine size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <Input
               type={showPassword ? "text" : "password"}
@@ -228,47 +251,65 @@ export default function LoginPage() {
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
             >
-              {showPassword ? (
-                <AiOutlineEyeInvisible size={16} />
-              ) : (
-                <AiOutlineEye size={16} />
-              )}
+              {showPassword ? <AiOutlineEyeInvisible size={16} /> : <AiOutlineEye size={16} />}
             </button>
           </div>
 
-          {/* Remember Me + Forgot Password */}
-          <div className="flex items-center justify-between mb-5">
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="remember"
-                checked={rememberMe}
-                onCheckedChange={(v) => setRememberMe(v as boolean)}
-                className="data-[state=checked]:bg-green-600 data-[state=checked]:border-green-600 w-4 h-4"
-              />
-              <Label htmlFor="remember" className="text-sm text-gray-600 cursor-pointer">
-                Remember me
-              </Label>
-            </div>
-            <button className="text-sm text-green-600 hover:text-green-700 font-medium transition-colors">
-              Forgot Password?
+          {/* Confirm Password */}
+          <div className="relative mb-4">
+            <RiLockPasswordLine size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+            <Input
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="Confirm password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="pl-9 pr-10 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-blue-500 text-gray-700 placeholder:text-gray-400"
+            />
+            <button
+              type="button"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              {showConfirmPassword ? <AiOutlineEyeInvisible size={16} /> : <AiOutlineEye size={16} />}
             </button>
           </div>
 
-          {/* Login Button */}
+          {/* Terms */}
+          <div className="flex items-start gap-2 mb-5">
+            <Checkbox
+              id="terms"
+              checked={agreedToTerms}
+              onCheckedChange={(v) => setAgreedToTerms(v as boolean)}
+              className="mt-0.5 data-[state=checked]:bg-green-600 data-[state=checked]:border-green-600 w-4 h-4"
+            />
+            <Label htmlFor="terms" className="text-sm text-gray-600 cursor-pointer leading-snug">
+              I agree to the{" "}
+              <button className="text-green-600 hover:text-green-700 font-medium transition-colors">
+                Terms of Service
+              </button>{" "}
+              and{" "}
+              <button className="text-green-600 hover:text-green-700 font-medium transition-colors">
+                Privacy Policy
+              </button>
+            </Label>
+          </div>
+
+          {/* Sign Up Button */}
           <Button
             onClick={handleSubmit}
-            className="w-full h-11 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg text-sm transition-all shadow-sm hover:shadow-md mb-5"
+            className="w-full h-11 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg text-sm transition-all shadow-sm hover:shadow-md mb-4"
           >
-            Log in
+            Create Account
           </Button>
 
-          {/* Sign Up */}
+          {/* Login link */}
           <p className="text-center text-sm text-gray-500">
-            Don't have an account?{" "}
-            <button className="text-green-600 hover:text-green-700 font-semibold transition-colors">
-              Create an account
-            </button>
+            Already have an account?{" "}
+            
           </p>
+          <button className="text-green-600 hover:text-green-700 font-semibold transition-colors">
+              Log in
+            </button>
         </div>
 
         {/* Right Panel */}
