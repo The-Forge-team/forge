@@ -4,11 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook, FaSlack } from "react-icons/fa";
+import {  FaSlack } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
+import { useNavigate } from "@tanstack/react-router";
+import { FaGithub } from "react-icons/fa";
 
 // Dotwork Logo
 const DotworkLogo = () => (
@@ -155,6 +157,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -189,8 +192,8 @@ export default function LoginPage() {
               variant="outline"
               className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-gray-50 rounded-lg"
             >
-              <FaFacebook size={18} color="#1877F2" />
-              Facebook
+              <FaGithub  size={18} color="#1877F2" />
+              Github
             </Button>
           </div>
 
@@ -265,7 +268,8 @@ export default function LoginPage() {
           {/* Sign Up */}
           <p className="text-center text-sm text-gray-500">
             Don't have an account?{" "}
-            <button className="text-green-600 hover:text-green-700 font-semibold transition-colors">
+            <button onClick={() => navigate({ to: "/signup" })}
+             className="text-green-600 hover:text-green-700 font-semibold transition-colors">
               Create an account
             </button>
           </p>
