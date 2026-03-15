@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import LoginPage from "./Pages/Login";
-import ForgotPasswordPage from "./Pages/ForgotPassword";
+import LoginPage from "./pages/auth/Login.tsx";
+import ForgotPasswordPage from "./pages/auth/ForgotPassword.tsx";
 
 function App() {
   return (
