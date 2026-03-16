@@ -4,13 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { FcGoogle } from "react-icons/fc";
-import {  FaSlack } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
 import { useNavigate } from "@tanstack/react-router";
 import { FaGithub } from "react-icons/fa";
+import RightPanel from "./RightPanel";
 
 // Dotwork Logo
 const DotworkLogo = () => (
@@ -22,135 +22,7 @@ const DotworkLogo = () => (
   </div>
 );
 
-// Right panel illustration
-const RightIllustration = () => (
-  <div className="relative flex flex-col items-center justify-center h-full px-10 text-white">
-    {/* Background glow */}
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <div
-        className="rounded-full opacity-20"
-        style={{
-          width: "420px",
-          height: "420px",
-          background: "radial-gradient(circle, #4ade80 0%, transparent 70%)",
-        }}
-      />
-    </div>
 
-    {/* Dashboard card mock */}
-    <div className="relative z-10 flex items-center justify-center mb-10">
-      {/* App icons orbiting */}
-      <div className="relative" style={{ width: "320px", height: "260px" }}>
-        {/* Slack */}
-        <div
-          className="absolute flex items-center justify-center rounded-full shadow-lg"
-          style={{
-            top: "0px",
-            left: "40px",
-            width: "52px",
-            height: "52px",
-            background: "rgba(255,255,255,0.15)",
-            backdropFilter: "blur(8px)",
-            border: "1.5px solid rgba(255,255,255,0.25)",
-          }}
-        >
-          <FaSlack size={26} color="#E01E5A" />
-        </div>
-
-        {/* Dotwork small icon */}
-        <div
-          className="absolute flex items-center justify-center rounded-full shadow-lg"
-          style={{
-            top: "100px",
-            left: "0px",
-            width: "52px",
-            height: "52px",
-            background: "rgba(255,255,255,0.15)",
-            backdropFilter: "blur(8px)",
-            border: "1.5px solid rgba(255,255,255,0.25)",
-          }}
-        >
-          <div className="w-7 h-7 bg-green-500 rounded-lg flex items-center justify-center">
-              <TbGridDots size={16} color="white" />
-            </div>
-        </div>
-
-        {/* Google icon */}
-        <div
-          className="absolute flex items-center justify-center rounded-full shadow-lg"
-          style={{
-            bottom: "10px",
-            left: "55px",
-            width: "52px",
-            height: "52px",
-            background: "rgba(255,255,255,0.15)",
-            backdropFilter: "blur(8px)",
-            border: "1.5px solid rgba(255,255,255,0.25)",
-          }}
-        >
-          <FcGoogle size={26} />
-        </div>
-
-        {/* Connection lines (SVG) */}
-        <svg
-          className="absolute inset-0"
-          width="320"
-          height="260"
-          viewBox="0 0 320 260"
-          fill="none"
-        >
-          <path d="M92 26 L190 100" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <path d="M52 126 L190 120" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <path d="M107 216 L190 140" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeDasharray="4 4" />
-        </svg>
-
-        {/* Dashboard card */}
-        <div
-          className="absolute rounded-xl shadow-2xl overflow-hidden"
-          style={{
-            top: "30px",
-            right: "0px",
-            width: "175px",
-            background: "white",
-          }}
-        >
-          <div className="flex items-center gap-1.5 px-3 py-2 border-b border-gray-100">
-            <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-            <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-            <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-          </div>
-          {[
-            { color: "bg-blue-400" },
-            { color: "bg-purple-400" },
-            { color: "bg-green-400" },
-          ].map((item, i) => (
-            <div key={i} className="flex items-center gap-2 px-3 py-2.5 border-b border-gray-50">
-              <div className={`w-6 h-6 rounded-full ${item.color} flex-shrink-0`} />
-              <div className="flex-1 space-y-1">
-                <div className="h-2 bg-gray-200 rounded-full w-full" />
-                <div className="h-1.5 bg-gray-100 rounded-full w-3/4" />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    {/* <div className="relative z-10 text-center">
-      <h2 className="text-2xl font-bold mb-2">Connect with every application.</h2>
-      <p className="text-green-200 text-sm leading-relaxed max-w-xs">
-        Everything you need in an easily customizable dashboard.
-      </p>
-    </div> */}
-
-    {/* Pagination dots */}
-    <div className="absolute bottom-8 flex gap-2">
-      <div className="w-2 h-2 rounded-full bg-white opacity-90" />
-      <div className="w-2 h-2 rounded-full bg-white opacity-40" />
-      <div className="w-2 h-2 rounded-full bg-white opacity-40" />
-    </div>
-  </div>
-);
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -183,14 +55,14 @@ export default function LoginPage() {
           <div className="flex gap-3 mb-5">
             <Button
               variant="outline"
-              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-gray-50 rounded-lg"
+              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-gray-50 rounded-lg hover:cursor-pointer"
             >
               <FcGoogle size={18} />
               Google
             </Button>
             <Button
               variant="outline"
-              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-gray-50 rounded-lg"
+              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-gray-50 rounded-lg hover:cursor-pointer"
             >
               <FaGithub  size={18} color="#1877F2" />
               Github
@@ -229,7 +101,7 @@ export default function LoginPage() {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors hover:cursor-pointer"
             >
               {showPassword ? (
                 <AiOutlineEyeInvisible size={16} />
@@ -252,7 +124,7 @@ export default function LoginPage() {
                 Remember me
               </Label>
             </div>
-            <button className="text-sm text-green-600 hover:text-green-700 font-medium transition-colors">
+            <button className="text-sm text-green-600 hover:text-green-700 font-medium transition-colors hover:cursor-pointer">
               Forgot Password?
             </button>
           </div>
@@ -260,7 +132,7 @@ export default function LoginPage() {
           {/* Login Button */}
           <Button
             onClick={handleSubmit}
-            className="w-full h-11 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg text-sm transition-all shadow-sm hover:shadow-md mb-5"
+            className="w-full h-11 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg text-sm transition-all shadow-sm hover:shadow-md mb-5 hover:cursor-pointer"
           >
             Log in
           </Button>
@@ -269,7 +141,7 @@ export default function LoginPage() {
           <p className="text-center text-sm text-gray-500">
             Don't have an account?{" "}
             <button onClick={() => navigate({ to: "/signup" })}
-             className="text-green-600 hover:text-green-700 font-semibold transition-colors">
+             className="text-green-600 hover:text-green-700 font-semibold transition-colors hover:cursor-pointer">
               Create an account
             </button>
           </p>
@@ -280,7 +152,7 @@ export default function LoginPage() {
           className="hidden md:flex flex-1 relative"
           style={{ background: "linear-gradient(135deg, #14532d 0%, #16a34a 50%, #22c55e 100%)" }}
         >
-          <RightIllustration />
+          <RightPanel />
         </div>
       </div>
     </div>
