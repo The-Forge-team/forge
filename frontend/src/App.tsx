@@ -6,7 +6,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
-      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+      {/* <Route path="/forgot-password" element={<ForgotPasswordPage />} /> */}
     </Routes>
   );
 }
