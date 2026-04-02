@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as ForgotpasswordRouteImport } from './routes/forgotpassword'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
   path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotpasswordRoute = ForgotpasswordRouteImport.update({
+  id: '/forgotpassword',
+  path: '/forgotpassword',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/forgotpassword': typeof ForgotpasswordRoute
   '/signup': typeof SignupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/forgotpassword': typeof ForgotpasswordRoute
   '/signup': typeof SignupRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/forgotpassword': typeof ForgotpasswordRoute
   '/signup': typeof SignupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/signup'
+  fullPaths: '/' | '/forgotpassword' | '/signup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/signup'
-  id: '__root__' | '/' | '/signup'
+  to: '/' | '/forgotpassword' | '/signup'
+  id: '__root__' | '/' | '/forgotpassword' | '/signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ForgotpasswordRoute: typeof ForgotpasswordRoute
   SignupRoute: typeof SignupRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/signup'
       fullPath: '/signup'
       preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgotpassword': {
+      id: '/forgotpassword'
+      path: '/forgotpassword'
+      fullPath: '/forgotpassword'
+      preLoaderRoute: typeof ForgotpasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ForgotpasswordRoute: ForgotpasswordRoute,
   SignupRoute: SignupRoute,
 }
 export const routeTree = rootRouteImport
