@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import LoginPage from "./Pages/Login";
+import LoginPage from "./Pages/auth/Login";
 
 
 function App() {
