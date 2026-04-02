@@ -124,7 +124,9 @@ export default function LoginPage() {
                 Remember me
               </Label>
             </div>
-            <button className="text-sm text-green-600 hover:text-green-700 font-medium transition-colors hover:cursor-pointer">
+            <button className="text-sm text-green-600 hover:text-green-700 font-medium transition-colors hover:cursor-pointer"
+            onClick={() => navigate({to: "/forgotpassword"})}
+            >
               Forgot Password?
             </button>
           </div>

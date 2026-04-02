@@ -32,18 +32,18 @@ export default function ForgotPasswordPage() {
 
 <form className="w-full space-y-4" onSubmit={(e) => e.preventDefault()}>
           <div className="relative group">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5 transition-colors duration-300 group-focus-within:text-primary" />
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4 transition-colors duration-300 group-focus-within:text-primary" />
             <Input 
               type="email" 
               placeholder="Enter email" 
-              className="pl-10 h-14 bg-card text-card-foreground border-border transition-all duration-300 focus:ring-2 focus:ring-primary focus:border-transparent hover:border-primary/50"
+              className="pl-10 h-11 bg-card text-card-foreground border-border transition-all duration-300 focus:ring-2 focus:ring-primary focus:border-transparent hover:border-primary/50"
               required
             />
           </div>
           
           <Button 
             type="submit" 
-            className="w-full h-14 bg-primary text-primary-foreground font-semibold tracking-wide transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] cursor-pointer"
+            className="w-full h-11 bg-green-600 text-white text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-green-700 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] cursor-pointer"
           >
             SUBMIT
           </Button>
