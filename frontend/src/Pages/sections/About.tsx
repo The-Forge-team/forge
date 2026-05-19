@@ -1,6 +1,7 @@
 import { useRef, type ReactNode } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import { motion, useInView } from 'framer-motion';
+import { Navbar } from '@/components/Navbar';
 import {
   Award,
   BookOpen,
@@ -15,7 +16,6 @@ import {
   Users,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { Navbar } from '@/components/Navbar';
 import { TbGridDots } from 'react-icons/tb';
 
 // Forge Logo Animation
@@ -362,7 +362,7 @@ function AboutHeroSection() {
   );
 }
 
-// --- Community ---
+// Community Section
 
 type Community = {
   name: string;
