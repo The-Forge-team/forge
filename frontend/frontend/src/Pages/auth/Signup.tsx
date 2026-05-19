@@ -8,14 +8,21 @@ import { FcGoogle } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-
+import { TbGridDots } from "react-icons/tb";
 import { BsPerson } from "react-icons/bs";
 import { useNavigate } from "@tanstack/react-router";
 import { FaGithub } from "react-icons/fa";
 import AuthImage from "../../components/AuthImage.tsx";
-import ForgeLogo from "@/assets/forge-logo.png";
 
-
+// Dotwork Logo to be replaced with forge logo
+const DotworkLogo = () => (
+  <div className="flex items-center gap-2 mb-6">
+    <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
+      <TbGridDots size={18} color="white" />
+    </div>
+    <span className="text-green-800 font-semibold text-4xl tracking-tight">Forge</span>
+  </div>
+);
 
 
 
@@ -33,7 +40,6 @@ export default function Signup() {
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
     console.log({ firstName, lastName, email, password, confirmPassword, agreedToTerms });
-    navigate({ to: "/homepage" });
   };
 
   return (
@@ -44,13 +50,7 @@ export default function Signup() {
       >
         {/* Left Panel */}
         <div className="flex-1 bg-white px-12 py-8 flex flex-col justify-center">
-          <div className="flex justify-center">
-            <img
-              src={ForgeLogo}
-              alt="Forge logo"
-              className="h-20 w-20 bg-green-600 rounded-lg"
-            />
-          </div>
+          <DotworkLogo />
 
           <h1 className="text-3xl font-bold text-gray-900 mb-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Create an Account
