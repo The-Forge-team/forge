@@ -2,6 +2,10 @@ import { useRef, type ReactNode } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import { motion, useInView } from 'framer-motion';
 import { Navbar } from '@/components/Navbar';
+import womenInTech from '/public/images/womenInTech.jpg';
+import frontend from '/public/images/frontend.jpg';
+import ai from '/public/images/ai.jpg';
+import openSource from '/public/images/openSource.jpg';
 import {
   Award,
   BookOpen,
@@ -20,24 +24,28 @@ import { TbGridDots } from 'react-icons/tb';
 
 // Forge Logo Animation
 
-
 const DotworkLogo = () => (
   <div className="flex items-center gap-2 mb-6">
     <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
       <TbGridDots size={18} color="white" />
     </div>
-    <span className="text-green-800 font-semibold text-sm tracking-tight">Forge</span>
+    <span className="text-green-800 font-semibold text-sm tracking-tight">
+      Forge
+    </span>
   </div>
 );
 
- 
 // Hero Section Animation
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
+    transition: {
+      delay: i * 0.12,
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
   }),
 };
 
@@ -61,7 +69,10 @@ function IsometricCube({ className }: { className?: string }) {
     <div className={className} style={{ perspective: '600px' }}>
       <div
         className="relative h-14 w-14"
-        style={{ transformStyle: 'preserve-3d', transform: 'rotateX(18deg) rotateY(-28deg)' }}
+        style={{
+          transformStyle: 'preserve-3d',
+          transform: 'rotateX(18deg) rotateY(-28deg)',
+        }}
       >
         <motion.div
           className="absolute inset-0 rounded-md bg-primary/90 shadow-lg shadow-primary/30"
@@ -98,7 +109,11 @@ function FloatingCard({
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ delay, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      <motion.div variants={floatY} animate="animate" style={{ transitionDelay: `${delay}s` }}>
+      <motion.div
+        variants={floatY}
+        animate="animate"
+        style={{ transitionDelay: `${delay}s` }}
+      >
         {children}
       </motion.div>
     </motion.div>
@@ -130,7 +145,9 @@ function DashboardMockup() {
               <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
                 Skill score
               </p>
-              <p className="text-sm font-bold text-foreground">+240 this week</p>
+              <p className="text-sm font-bold text-foreground">
+                +240 this week
+              </p>
             </div>
           </div>
         </motion.div>
@@ -150,13 +167,20 @@ function DashboardMockup() {
             transition={{ duration: 2.5, repeat: Infinity }}
           >
             <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-sm font-semibold text-foreground">Badge unlocked</span>
+            <span className="text-sm font-semibold text-foreground">
+              Badge unlocked
+            </span>
           </motion.div>
-          <p className="mt-1 text-xs text-muted-foreground">Open-source contributor</p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Open-source contributor
+          </p>
         </motion.div>
       </FloatingCard>
 
-      <FloatingCard className="absolute -bottom-4 right-6 z-20 hidden lg:block" delay={1.1}>
+      <FloatingCard
+        className="absolute -bottom-4 right-6 z-20 hidden lg:block"
+        delay={1.1}
+      >
         <motion.div
           className="flex items-center gap-3 rounded-xl border border-border bg-card/95 px-4 py-3 shadow-xl backdrop-blur-md"
           style={{ transform: 'rotateY(-6deg) rotateX(8deg)' }}
@@ -170,8 +194,12 @@ function DashboardMockup() {
             ))}
           </div>
           <div>
-            <p className="text-xs font-semibold text-foreground">3 collaborators</p>
-            <p className="text-[10px] text-muted-foreground">on your latest PR</p>
+            <p className="text-xs font-semibold text-foreground">
+              3 collaborators
+            </p>
+            <p className="text-[10px] text-muted-foreground">
+              on your latest PR
+            </p>
           </div>
         </motion.div>
       </FloatingCard>
@@ -201,7 +229,9 @@ function DashboardMockup() {
               <motion.div
                 key={label}
                 className={`flex flex-col items-center gap-0.5 rounded-lg p-1.5 ${
-                  active ? 'bg-primary/15 text-primary' : 'text-muted-foreground'
+                  active
+                    ? 'bg-primary/15 text-primary'
+                    : 'text-muted-foreground'
                 }`}
                 whileHover={{ scale: 1.08 }}
               >
@@ -214,8 +244,12 @@ function DashboardMockup() {
           <div className="flex min-w-0 flex-1 flex-col gap-2 p-2.5 sm:p-3">
             <div className="flex items-center justify-between gap-2">
               <div>
-                <p className="text-[10px] font-medium text-muted-foreground">Featured moment</p>
-                <p className="text-xs font-semibold text-foreground">Late-night build session</p>
+                <p className="text-[10px] font-medium text-muted-foreground">
+                  Featured moment
+                </p>
+                <p className="text-xs font-semibold text-foreground">
+                  Late-night build session
+                </p>
               </div>
               <motion.span
                 className="rounded-full bg-primary/15 px-2 py-0.5 text-[9px] font-semibold text-primary"
@@ -250,8 +284,12 @@ function DashboardMockup() {
                   transition={{ delay: 0.85 }}
                 >
                   <div>
-                    <p className="text-xs font-semibold text-white">Shipped 3 lessons today</p>
-                    <p className="text-[10px] text-white/60">Java · GUI · Community kudos</p>
+                    <p className="text-xs font-semibold text-white">
+                      Shipped 3 lessons today
+                    </p>
+                    <p className="text-[10px] text-white/60">
+                      Java · GUI · Community kudos
+                    </p>
                   </div>
                   <motion.span
                     className="flex shrink-0 items-center gap-1 rounded-md bg-primary/20 px-1.5 py-0.5 text-[10px] font-bold text-primary"
@@ -270,7 +308,9 @@ function DashboardMockup() {
               initial="hidden"
               animate="visible"
               variants={{
-                visible: { transition: { staggerChildren: 0.08, delayChildren: 0.9 } },
+                visible: {
+                  transition: { staggerChildren: 0.08, delayChildren: 0.9 },
+                },
               }}
             >
               {[
@@ -284,8 +324,12 @@ function DashboardMockup() {
                   custom={0}
                   className="rounded-md border border-border bg-muted/40 px-2 py-1.5 text-center"
                 >
-                  <p className="text-xs font-bold text-foreground">{stat.value}</p>
-                  <p className="text-[9px] text-muted-foreground">{stat.label}</p>
+                  <p className="text-xs font-bold text-foreground">
+                    {stat.value}
+                  </p>
+                  <p className="text-[9px] text-muted-foreground">
+                    {stat.label}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
@@ -321,7 +365,8 @@ function AboutHeroSection() {
           backgroundImage:
             'linear-gradient(rgba(0,255,156,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,156,0.06) 1px, transparent 1px)',
           backgroundSize: '48px 48px',
-          maskImage: 'radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent)',
+          maskImage:
+            'radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent)',
         }}
       />
 
@@ -332,8 +377,6 @@ function AboutHeroSection() {
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
         >
-         
-
           <motion.h1
             variants={fadeUp}
             custom={1}
@@ -351,8 +394,9 @@ function AboutHeroSection() {
             custom={2}
             className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
-            Forge is where developers showcase projects, document what they learn, and get
-            credited for their work. Join the conversation, learn and collaborate.
+            Forge is where developers showcase projects, document what they
+            learn, and get credited for their work. Join the conversation, learn
+            and collaborate.
           </motion.p>
         </motion.div>
 
@@ -369,139 +413,15 @@ type Community = {
   icon: LucideIcon;
   members: string;
   trending: string;
-  illustration: ReactNode;
-  accent: string;
+  image: string;
 };
 
-function FrontendIllustration() {
-  return (
-    <div className="relative h-full w-full overflow-hidden">
-      <motion.div
-        className="absolute -right-4 top-2 h-20 w-20 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm"
-        animate={{ y: [0, -6, 0], rotate: [0, 2, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute bottom-3 left-3 h-14 w-24 rounded-lg border border-sky-300/30 bg-sky-400/20"
-        animate={{ x: [0, 4, 0] }}
-        transition={{ duration: 5, repeat: Infinity }}
-      />
-      <div className="absolute inset-0 flex items-center justify-center gap-2 opacity-90">
-        {[0, 1, 2].map((col) => (
-          <div key={col} className="flex flex-col gap-2">
-            {[0, 1, 2].map((row) => (
-              <motion.div
-                key={row}
-                className="h-3 w-8 rounded-sm bg-white/25"
-                animate={{ opacity: [0.4, 0.9, 0.4] }}
-                transition={{ duration: 2.5, repeat: Infinity, delay: (col + row) * 0.15 }}
-              />
-            ))}
-          </div>
-        ))}
-      </div>
-      <Layout className="absolute right-4 bottom-4 h-8 w-8 text-white/40" />
-    </div>
-  );
-}
-
-function AiMlIllustration() {
-  const nodes = [
-    { x: '20%', y: '30%' },
-    { x: '50%', y: '20%' },
-    { x: '80%', y: '35%' },
-    { x: '35%', y: '70%' },
-    { x: '65%', y: '75%' },
-  ];
-  return (
-    <div className="relative h-full w-full">
-      <svg className="absolute inset-0 h-full w-full" aria-hidden>
-        <motion.line
-          x1="20%"
-          y1="30%"
-          x2="50%"
-          y2="20%"
-          stroke="rgba(255,255,255,0.25)"
-          strokeWidth="1"
-          animate={{ opacity: [0.3, 0.7, 0.3] }}
-          transition={{ duration: 3, repeat: Infinity }}
-        />
-        <line x1="50%" y1="20%" x2="80%" y2="35%" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-        <line x1="50%" y1="20%" x2="35%" y2="70%" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-        <line x1="35%" y1="70%" x2="65%" y2="75%" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-      </svg>
-      {nodes.map((node, i) => (
-        <motion.div
-          key={i}
-          className="absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-200/80 shadow-[0_0_12px_rgba(196,181,253,0.8)]"
-          style={{ left: node.x, top: node.y }}
-          animate={{ scale: [1, 1.35, 1] }}
-          transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
-        />
-      ))}
-      <Brain className="absolute right-3 bottom-3 h-9 w-9 text-white/35" />
-    </div>
-  );
-}
-
-function WomenInTechIllustration() {
-  return (
-    <div className="relative h-full w-full">
-      <motion.div
-        className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border border-rose-200/30"
-        animate={{ scale: [1, 1.08, 1], opacity: [0.5, 0.8, 0.5] }}
-        transition={{ duration: 4, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute left-[28%] top-[38%] h-10 w-10 rounded-full bg-rose-200/50"
-        animate={{ y: [0, -5, 0] }}
-        transition={{ duration: 3.5, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute right-[26%] top-[42%] h-8 w-8 rounded-full bg-fuchsia-200/45"
-        animate={{ y: [0, 6, 0] }}
-        transition={{ duration: 4, repeat: Infinity, delay: 0.3 }}
-      />
-      <motion.div
-        className="absolute bottom-6 left-1/2 h-9 w-9 -translate-x-1/2 rounded-full bg-white/25"
-        animate={{ y: [0, -4, 0] }}
-        transition={{ duration: 3, repeat: Infinity, delay: 0.6 }}
-      />
-      <Users className="absolute right-4 bottom-4 h-8 w-8 text-white/35" />
-    </div>
-  );
-}
-
-function OpenSourceIllustration() {
-  return (
-    <div className="relative h-full w-full">
-      <motion.div
-        className="absolute left-6 top-6 flex items-center gap-1"
-        animate={{ opacity: [0.6, 1, 0.6] }}
-        transition={{ duration: 3, repeat: Infinity }}
-      >
-        <div className="h-2 w-2 rounded-full bg-emerald-200/80" />
-        <motion.div
-          className="h-px w-12 bg-emerald-200/50"
-          animate={{ scaleX: [0.5, 1, 0.5] }}
-          transition={{ duration: 2.5, repeat: Infinity }}
-          style={{ originX: 0 }}
-        />
-        <motion.div
-          className="h-2 w-2 rounded-full bg-white/50"
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        />
-      </motion.div>
-      <motion.div
-        className="absolute right-5 bottom-8 h-16 w-16 rounded-full border-2 border-dashed border-emerald-200/40"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-      />
-      <GitBranch className="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 text-white/30" />
-    </div>
-  );
-}
+const communityImages = {
+  womenInTech,
+  frontend,
+  ai,
+  openSource
+};
 
 const communities: Community[] = [
   {
@@ -509,32 +429,28 @@ const communities: Community[] = [
     icon: Layout,
     members: '12.4k',
     trending: 'React Server Components deep dive',
-    accent: 'from-sky-600 via-blue-600 to-indigo-700',
-    illustration: <FrontendIllustration />,
+    image: communityImages.frontend,
   },
   {
     name: 'AI & ML Circle',
     icon: Brain,
     members: '8.9k',
     trending: 'Fine-tuning LLMs on small datasets',
-    accent: 'from-violet-600 via-purple-600 to-fuchsia-700',
-    illustration: <AiMlIllustration />,
+    image: communityImages.ai,
   },
   {
     name: 'Women in Tech',
     icon: Users,
     members: '6.2k',
-    trending: 'Mentorship matching this week',
-    accent: 'from-rose-500 via-pink-600 to-fuchsia-600',
-    illustration: <WomenInTechIllustration />,
+    image: communityImages.womenInTech,
+    trending: 'mentorship',
   },
   {
     name: 'Open Source Circle',
     icon: GitBranch,
     members: '15.1k',
     trending: 'Good-first-issues for new contributors',
-    accent: 'from-emerald-600 via-green-600 to-teal-700',
-    illustration: <OpenSourceIllustration />,
+    image: communityImages.openSource,
   },
 ];
 
@@ -562,8 +478,13 @@ function CommunityCard({
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.98 }}
     >
-      <div className={`relative h-36 bg-gradient-to-br ${community.accent} p-4`}>
-        {community.illustration}
+      <div className={`relative h-36 bg-gradient-to-br p-4`}>
+      <img 
+  src={community.image} 
+  alt={community.name} 
+  className="absolute inset-0 h-full w-full object-cover" 
+/>
+
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         <div className="absolute bottom-3 left-3 flex h-9 w-9 items-center justify-center rounded-lg bg-black/25 backdrop-blur-sm">
           <Icon className="h-4 w-4 text-white" />
@@ -582,10 +503,6 @@ function CommunityCard({
         </div>
 
         <div className="mt-auto rounded-lg border border-border bg-muted/40 px-3 py-2.5">
-          <p className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-primary">
-            <TrendingUp className="h-3 w-3" />
-            Trending now
-          </p>
           <p className="mt-1 line-clamp-2 text-sm leading-snug text-foreground/90">
             {community.trending}
           </p>
@@ -618,7 +535,6 @@ function AboutCommunitySection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          
           <h2
             id="community-heading"
             className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl"
@@ -626,8 +542,9 @@ function AboutCommunitySection() {
             Find your circle. Grow with your people.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Join focused spaces built around skills, identity, and contributions. Each with live
-            discussions and recognition that rewards real work.
+            Join focused spaces built around skills, identity, and
+            contributions. Each with live discussions and recognition that
+            rewards real work.
           </p>
         </motion.div>
 
@@ -686,8 +603,10 @@ const roadmapMilestones: RoadmapMilestone[] = [
 ];
 
 function milestoneGlow(status: MilestoneStatus) {
-  if (status === 'active') return 'bg-primary shadow-[0_0_14px] shadow-primary/35';
-  if (status === 'upcoming') return 'bg-primary/60 shadow-[0_0_10px] shadow-primary/20';
+  if (status === 'active')
+    return 'bg-primary shadow-[0_0_14px] shadow-primary/35';
+  if (status === 'upcoming')
+    return 'bg-primary/60 shadow-[0_0_10px] shadow-primary/20';
   return 'bg-primary/25 shadow-none';
 }
 
@@ -699,7 +618,10 @@ function MentorshipNetworkIllustration({ inView }: { inView: boolean }) {
     { cx: 50, cy: 78, r: 4 },
   ];
   return (
-    <motion.div className="relative mx-auto h-20 w-full max-w-[120px] text-primary" aria-hidden>
+    <motion.div
+      className="relative mx-auto h-20 w-full max-w-[120px] text-primary"
+      aria-hidden
+    >
       <svg className="h-full w-full" viewBox="0 0 100 100">
         {[
           [50, 22, 78, 48],
@@ -735,7 +657,15 @@ function MentorshipNetworkIllustration({ inView }: { inView: boolean }) {
             transition={{ duration: 3, repeat: Infinity, delay: i * 0.2 }}
           />
         ))}
-        <circle cx={50} cy={50} r="7" fill="currentColor" fillOpacity={0.1} stroke="currentColor" strokeOpacity={0.35} />
+        <circle
+          cx={50}
+          cy={50}
+          r="7"
+          fill="currentColor"
+          fillOpacity={0.1}
+          stroke="currentColor"
+          strokeOpacity={0.35}
+        />
       </svg>
     </motion.div>
   );
@@ -747,7 +677,10 @@ function HiringEcosystemIllustration({ inView }: { inView: boolean }) {
       className="relative mx-auto h-20 w-full max-w-[120px] text-primary"
       aria-hidden
     >
-      <svg className="h-full w-full text-muted-foreground" viewBox="0 0 100 100">
+      <svg
+        className="h-full w-full text-muted-foreground"
+        viewBox="0 0 100 100"
+      >
         <motion.rect
           x="58"
           y="24"
@@ -809,7 +742,8 @@ function MilestoneIllustration({
   type: RoadmapMilestone['illustration'];
   inView: boolean;
 }) {
-  if (type === 'mentorship') return <MentorshipNetworkIllustration inView={inView} />;
+  if (type === 'mentorship')
+    return <MentorshipNetworkIllustration inView={inView} />;
   if (type === 'hiring') return <HiringEcosystemIllustration inView={inView} />;
   return (
     <div className="flex h-20 items-center justify-center text-primary/40">
@@ -838,7 +772,10 @@ function FloatingRoadmapLines({ inView }: { inView: boolean }) {
             ? { pathLength: 1, opacity: 1, x: [0, 12, 0] }
             : { pathLength: 0, opacity: 0 }
         }
-        transition={{ pathLength: { duration: 2 }, x: { duration: 14, repeat: Infinity } }}
+        transition={{
+          pathLength: { duration: 2 },
+          x: { duration: 14, repeat: Infinity },
+        }}
       />
       <motion.path
         d="M0 280 Q250 240 500 300 T800 260"
@@ -872,9 +809,6 @@ function FloatingRoadmapLines({ inView }: { inView: boolean }) {
   );
 }
 
-
-
-
 function FutureTimelineNode({
   milestone,
   index,
@@ -891,7 +825,11 @@ function FutureTimelineNode({
       className="relative flex gap-5 pb-8 last:pb-0"
       initial={{ opacity: 0, x: -16 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ delay: index * 0.15, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        delay: index * 0.15,
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+      }}
     >
       <motion.div className="relative z-10 flex shrink-0 flex-col items-center">
         <motion.span
@@ -917,8 +855,12 @@ function FutureTimelineNode({
         <p className="text-[10px] font-medium uppercase tracking-widest text-primary/70">
           {milestone.phase}
         </p>
-        <h3 className="mt-0.5 text-sm font-semibold text-foreground">{milestone.title}</h3>
-        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{milestone.detail}</p>
+        <h3 className="mt-0.5 text-sm font-semibold text-foreground">
+          {milestone.title}
+        </h3>
+        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+          {milestone.detail}
+        </p>
       </div>
     </motion.li>
   );
@@ -940,7 +882,11 @@ function FutureRoadmapCard({
       className="relative flex flex-col rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-primary/25"
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay: index * 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        delay: index * 0.12,
+        duration: 0.55,
+        ease: [0.22, 1, 0.36, 1],
+      }}
     >
       <div className="mb-4 flex flex-col items-center">
         <motion.span
@@ -966,8 +912,12 @@ function FutureRoadmapCard({
           <Icon className="h-4 w-4 text-primary" />
         </div>
         <div>
-          <h3 className="text-sm font-semibold text-foreground">{milestone.title}</h3>
-          <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{milestone.detail}</p>
+          <h3 className="text-sm font-semibold text-foreground">
+            {milestone.title}
+          </h3>
+          <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+            {milestone.detail}
+          </p>
         </div>
       </div>
     </motion.article>
@@ -1005,7 +955,8 @@ function AboutFutureSection() {
           backgroundImage:
             'linear-gradient(rgba(0,255,156,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,156,0.06) 1px, transparent 1px)',
           backgroundSize: '48px 48px',
-          maskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent)',
+          maskImage:
+            'radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent)',
         }}
       />
       <FloatingRoadmapLines inView={isInView} />
@@ -1017,7 +968,6 @@ function AboutFutureSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-        
           <h2
             id="future-heading"
             className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl"
@@ -1025,8 +975,8 @@ function AboutFutureSection() {
             The future of Forge
           </h2>
           <p className="mx-auto mt-3 max-w-lg text-sm text-muted-foreground">
-            A quiet look at what we are building next. Stay connected, intentional, and still grounded in
-            real contribution.
+            A quiet look at what we are building next. Stay connected,
+            intentional, and still grounded in real contribution.
           </p>
         </motion.div>
 
