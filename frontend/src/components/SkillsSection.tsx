@@ -75,7 +75,7 @@ export default function SkillsSection() {
 
   return (
     <motion.section
-      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-white to-emerald-50/30"
+      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#fff5f0]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -90,7 +90,7 @@ export default function SkillsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3">
+          <p className="text-xs font-bold text-[#0f766e] uppercase tracking-widest mb-3">
             Categories
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
@@ -117,7 +117,7 @@ export default function SkillsSection() {
               whileTap={{ scale: 0.95 }}
               className={`px-6 py-2 rounded-full font-semibold transition-all ${
                 selectedCategory === category
-                  ? "bg-linear-to-r from-emerald-600 to-cyan-600 text-white shadow-lg shadow-emerald-300/50"
+                  ? "bg-[#0f766e] text-white shadow-lg shadow-black/10"
                   : "bg-slate-100 text-slate-700 hover:bg-slate-200"
               }`}
             >
@@ -143,8 +143,8 @@ export default function SkillsSection() {
               whileTap={{ scale: 0.95 }}
               className={`relative p-4 rounded-xl font-semibold transition-all ${
                 selectedCategories.includes(categoryItem.id)
-                  ? "bg-linear-to-br from-emerald-600 to-cyan-600 text-white shadow-lg shadow-emerald-300/50 ring-2 ring-emerald-300 ring-offset-2 ring-offset-white"
-                  : "bg-white border-2 border-slate-200 text-slate-700 hover:border-emerald-400"
+                  ? "bg-[#0f766e] text-white shadow-lg shadow-black/10 ring-2 ring-[#0f766e] ring-offset-2 ring-offset-white"
+                  : "bg-white border-2 border-slate-200 text-slate-700 hover:border-[#ff7f50]"
               }`}
             >
               <div className="flex items-center justify-between gap-3 text-left">
@@ -173,7 +173,7 @@ export default function SkillsSection() {
           >
             <p className="text-slate-600 mb-4">
               Found{" "}
-              <span className="font-semibold text-emerald-600">
+              <span className="font-semibold text-[#0f766e]">
                 {FOUND_PROFESSIONALS}
               </span>{" "}
               professionals in{" "}
@@ -187,7 +187,7 @@ export default function SkillsSection() {
               {selectedCategoryItems.map((item) => (
                 <span
                   key={item.id}
-                  className="inline-flex items-center rounded-full bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-700 border border-emerald-200"
+                  className="inline-flex items-center rounded-full bg-[#fdf2f8] px-4 py-2 text-sm font-semibold text-[#f536ca] border border-[#f536ca]/20"
                 >
                   {item.name}
                 </span>
@@ -196,7 +196,7 @@ export default function SkillsSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full font-semibold text-white bg-linear-to-r from-emerald-600 to-cyan-600 hover:shadow-lg hover:shadow-emerald-300/50 transition-all"
+              className="px-8 py-3 rounded-full font-semibold text-white bg-[#0f766e] hover:bg-[#0d655d] hover:shadow-lg hover:shadow-black/10 transition-all"
             >
               Browse Professionals
             </motion.button>

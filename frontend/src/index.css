@@ -59,8 +59,8 @@
   --popover-foreground: #0F1115;
 
   /* Brand Accent */
-  --primary: #13221c;
-  --primary-foreground: #0F1115;
+  --primary: #0f766e;
+  --primary-foreground: #ffffff;
 
   --secondary: #F1F5F9;
   --secondary-foreground: #0F1115;
@@ -68,26 +68,26 @@
   --muted: #F1F5F9;
   --muted-foreground: #64748B;
 
-  --accent: #00FF9C;
-  --accent-foreground: #0F1115;
+  --accent: #ff7f50;
+  --accent-foreground: #ffffff;
 
   --destructive: #EF4444;
 
   --border: #E2E8F0;
   --input: #E2E8F0;
-  --ring: #00FF9C;
+  --ring: #f536ca;
 
   --sidebar: #FFFFFF;
   --sidebar-foreground: #0F1115;
 
-  --sidebar-primary: #00FF9C;
-  --sidebar-primary-foreground: #0F1115;
+  --sidebar-primary: #0f766e;
+  --sidebar-primary-foreground: #ffffff;
 
-  --sidebar-accent: #F1F5F9;
-  --sidebar-accent-foreground: #0F1115;
+  --sidebar-accent: #ff7f50;
+  --sidebar-accent-foreground: #ffffff;
 
   --sidebar-border: #E2E8F0;
-  --sidebar-ring: #00FF9C;
+  --sidebar-ring: #f536ca;
 }
 
 
@@ -103,8 +103,8 @@
   --popover-foreground: #E6EAF0;
 
   /* Primary (Neon Green Brand Accent) */
-  --primary: #00FF9C;
-  --primary-foreground: #0F1115;
+  --primary: #0f766e;
+  --primary-foreground: #ffffff;
 
   /* Secondary Surfaces */
   --secondary: #242832;
@@ -114,28 +114,28 @@
   --muted-foreground: #9AA4B2;
 
   /* Accent (can match primary for now) */
-  --accent: #00FF9C;
-  --accent-foreground: #0F1115;
+  --accent: #ff7f50;
+  --accent-foreground: #ffffff;
 
   /* System Colors */
   --destructive: #EF4444;
 
   --border: #2E3440;
   --input: #242832;
-  --ring: #00FF9C;
+  --ring: #f536ca;
 
   /* Sidebar */
   --sidebar: #1A1D24;
   --sidebar-foreground: #E6EAF0;
 
-  --sidebar-primary: #00FF9C;
-  --sidebar-primary-foreground: #0F1115;
+  --sidebar-primary: #0f766e;
+  --sidebar-primary-foreground: #ffffff;
 
-  --sidebar-accent: #242832;
-  --sidebar-accent-foreground: #E6EAF0;
+  --sidebar-accent: #ff7f50;
+  --sidebar-accent-foreground: #ffffff;
 
   --sidebar-border: #2E3440;
-  --sidebar-ring: #00FF9C;
+  --sidebar-ring: #f536ca;
 }
 
 

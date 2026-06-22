@@ -50,7 +50,7 @@ const itemVariants = {
 export default function TeamSection() {
   return (
     <motion.section
-      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-white to-emerald-50"
+      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#fff5f0]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -66,7 +66,7 @@ export default function TeamSection() {
         >
           {/* Left - Text */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
-            <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-2">
+            <p className="text-xs font-bold text-[#0f766e] uppercase tracking-widest mb-2">
               Our Community
             </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
@@ -86,7 +86,7 @@ export default function TeamSection() {
 
           {/* CTA Button */}
           <motion.div variants={itemVariants} className="flex justify-center lg:justify-end">
-            <button className="px-8 py-3 rounded-full font-semibold text-white bg-linear-to-r from-emerald-600 to-cyan-600 hover:shadow-lg hover:shadow-emerald-300/50 transition-all">
+            <button className="px-8 py-3 rounded-full font-semibold text-white bg-[#0f766e] hover:bg-[#0d655d] hover:shadow-lg hover:shadow-black/10 transition-all">
               Join The Community
             </button>
           </motion.div>
@@ -113,8 +113,8 @@ export default function TeamSection() {
               <div
                 className={`relative rounded-full overflow-hidden border-4 border-slate-200 shadow-xl w-40 h-40 sm:w-48 sm:h-48 ${
                   idx % 2 === 0
-                    ? "bg-linear-to-br from-emerald-500 to-cyan-500"
-                    : "bg-linear-to-br from-purple-500 to-pink-500"
+                    ? "bg-[#0f766e]"
+                    : "bg-[#f536ca]"
                 }`}
               >
                 <img

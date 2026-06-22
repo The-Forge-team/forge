@@ -31,13 +31,13 @@ export default function CTASection() {
 
   return (
     <motion.section
-      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white"
+      className="relative overflow-hidden py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0f766e]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center text-white">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -46,13 +46,13 @@ export default function CTASection() {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6"
+            className="text-4xl sm:text-5xl font-bold mb-6"
           >
             Ready to Meet Your Next Collaborator?
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto"
+            className="text-lg text-white/90 mb-8 max-w-2xl mx-auto"
           >
             Join our thriving community of tech professionals and start your journey today
           </motion.p>
@@ -61,7 +61,7 @@ export default function CTASection() {
             onClick={handleGetStarted}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full font-semibold text-white bg-linear-to-r from-emerald-600 to-cyan-600 hover:shadow-lg hover:shadow-emerald-300/50 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full font-semibold text-white bg-[#ff7f50] hover:bg-[#f536ca] shadow-lg shadow-black/10 transition-all"
           >
             Start Your Journey
             <FiArrowRight className="w-5 h-5" />

@@ -34,7 +34,7 @@ export default function HeroSection() {
 
   return (
     <motion.section
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 relative overflow-hidden bg-white"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 relative overflow-hidden bg-slate-50"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -50,7 +50,7 @@ export default function HeroSection() {
           <motion.div className="flex flex-col">
             {/* Badge */}
             <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-flex items-center gap-2 text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-4 py-2 rounded-full w-fit">
+              <span className="inline-flex items-center gap-2 text-xs font-bold text-[#0f766e] bg-[#ecfdfb] border border-[#0f766e]/20 px-4 py-2 rounded-full w-fit">
                 <FiZap className="w-4 h-4" />
                 HELLO TECH PEEPX!!!
               </span>
@@ -63,7 +63,7 @@ export default function HeroSection() {
             >
               Tech People,
               <br />
-              <span className="bg-linear-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
+              <span className="text-[#0f766e]">
                 Real Connections
               </span>
             </motion.h1>
@@ -87,14 +87,14 @@ export default function HeroSection() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full px-4 py-3 rounded-full bg-slate-50 border-2 border-slate-200 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-full bg-white border-2 border-slate-200 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:border-[#0f766e] transition-colors"
                 />
               </div>
               <motion.button
                 onClick={handleGetStarted}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 rounded-full font-semibold text-white bg-linear-to-r from-emerald-600 to-cyan-600 hover:shadow-lg hover:shadow-emerald-300/50 transition-all whitespace-nowrap"
+                className="px-6 py-3 rounded-full font-semibold text-white bg-[#0f766e] hover:bg-[#0d655d] hover:shadow-lg hover:shadow-black/10 transition-all whitespace-nowrap"
               >
                 Get Started
                 <FiArrowRight className="w-4 h-4 inline ml-2" />
@@ -104,12 +104,12 @@ export default function HeroSection() {
             {/* Stats */}
             <motion.div variants={itemVariants} className="flex items-center gap-8">
               <div>
-                <div className="text-2xl font-bold text-emerald-600">10K+</div>
+                <div className="text-2xl font-bold text-[#0f766e]">10K+</div>
                 <div className="text-sm text-slate-500">cool people using Forge</div>
               </div>
               <div className="w-px h-12 bg-slate-200"></div>
               <div>
-                <div className="text-2xl font-bold text-emerald-600">200+</div>
+                <div className="text-2xl font-bold text-[#ff7f50]">200+</div>
                 <div className="text-sm text-slate-500">meetups hosted</div>
               </div>
             </motion.div>
@@ -121,7 +121,7 @@ export default function HeroSection() {
             className="relative h-96 lg:h-125 flex items-center justify-center"
           >
             <motion.div
-              className="absolute inset-0 rounded-3xl bg-linear-to-br from-emerald-100 to-cyan-100 transform rotate-3"
+              className="absolute inset-0 rounded-3xl bg-[#ff7f50]/10 transform rotate-3"
               animate={{ rotate: [3, 8, 3] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -133,12 +133,12 @@ export default function HeroSection() {
                 alt="Developer community"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-slate-900/30"></div>
             </div>
 
             {/* Floating Elements */}
             <motion.div
-              className="absolute top-8 left-8 w-20 h-20 bg-blue-100 rounded-3xl flex items-center justify-center text-blue-400 border-2 border-emerald-300 shadow-lg"
+              className="absolute top-8 left-8 w-20 h-20 bg-[#f536ca]/10 rounded-3xl flex items-center justify-center text-[#f536ca] border-2 border-[#f536ca]/25 shadow-lg"
               animate={{ x: [0, -10, 0], rotate: [0, -8, 0] }}
               transition={{ duration: 6, repeat: Infinity, delay: 0.4 }}
             >
@@ -146,7 +146,7 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="absolute top-10 right-10 w-20 h-20 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-700 border-2 border-cyan-300 shadow-lg"
+              className="absolute top-10 right-10 w-20 h-20 bg-[#0f766e]/10 rounded-2xl flex items-center justify-center text-[#0f766e] border-2 border-[#0f766e]/25 shadow-lg"
               animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
             >
@@ -154,7 +154,7 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="absolute bottom-20 left-0 w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center text-pink-700 border-2 border-cyan-300 shadow-lg"
+              className="absolute bottom-20 left-0 w-16 h-16 bg-[#ff7f50]/10 rounded-full flex items-center justify-center text-[#ff7f50] border-2 border-[#ff7f50]/25 shadow-lg"
               animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
               transition={{ duration: 5, repeat: Infinity, delay: 0.2 }}
             >
@@ -162,7 +162,7 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="absolute bottom-8 right-8 w-20 h-20 bg-amber-100 rounded-3xl flex items-center justify-center text-red-500 border-2 border-amber-300 shadow-lg"
+              className="absolute bottom-8 right-8 w-20 h-20 bg-[#f536ca]/10 rounded-3xl flex items-center justify-center text-[#f536ca] border-2 border-[#f536ca]/25 shadow-lg"
               animate={{ y: [0, 10, 0], rotate: [0, 10, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, delay: 0.6 }}
             >

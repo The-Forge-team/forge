@@ -63,7 +63,7 @@ const itemVariants = {
 export default function TestimonialSection() {
   return (
     <motion.section
-      className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-white to-emerald-50/50"
+      className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#fdf2f8]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -78,7 +78,7 @@ export default function TestimonialSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3">
+          <p className="text-xs font-bold text-[#f536ca] uppercase tracking-widest mb-3">
             Voices
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
@@ -112,14 +112,14 @@ export default function TestimonialSection() {
 
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-semibold text-slate-900">{testimonial.name}</span>
+                <span className="font-semibold text-[#0f766e]">{testimonial.name}</span>
                   <span className="text-slate-400">•</span>
                   <span className="text-sm text-slate-500">
                     {testimonial.role}, {testimonial.company}
                   </span>
                   <span className="ml-auto hidden sm:flex gap-1">
                     {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <FiStar key={i} className="w-3.5 h-3.5 fill-emerald-500 text-emerald-500" />
+                      <FiStar key={i} className="w-3.5 h-3.5 fill-[#ff7f50] text-[#ff7f50]" />
                     ))}
                   </span>
                 </div>

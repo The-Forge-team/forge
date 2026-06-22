@@ -37,18 +37,18 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#fff5f0] p-4">
       <div
         className="w-full flex overflow-hidden rounded-2xl shadow-2xl"
         style={{ maxWidth: "900px", minHeight: "520px" }}
       >
         {/* Left Panel */}
-        <div className="flex-1 bg-white px-12 py-8 flex flex-col justify-center">
+        <div className="flex-1 bg-white/90 px-12 py-8 flex flex-col justify-center">
           <div className="flex justify-center">
             <img
               src={ForgeLogo}
               alt="Forge logo"
-              className="h-20 w-20 bg-green-600 rounded-lg"
+              className="h-20 w-20 bg-[#0f766e] rounded-lg"
             />
           </div>
 
@@ -61,14 +61,14 @@ export default function Signup() {
           <div className="flex gap-3 mb-5">
             <Button
               variant="outline"
-              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-gray-50 rounded-lg hover:cursor-pointer"
+              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-[#ecfdfb] hover:border-[#0f766e] rounded-lg hover:cursor-pointer"
             >
               <FcGoogle size={18} />
               Google
             </Button>
             <Button
               variant="outline"
-              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-gray-50 rounded-lg hover:cursor-pointer"
+              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-[#fdf2f8] hover:border-[#f536ca] rounded-lg hover:cursor-pointer"
             >
               <FaGithub size={18} color="#1877F2" />
               Github
@@ -91,7 +91,7 @@ export default function Signup() {
                 placeholder="First name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-blue-500 text-gray-700 placeholder:text-gray-400"
+                className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
               />
             </div>
             <div className="relative flex-1">
@@ -101,7 +101,7 @@ export default function Signup() {
                 placeholder="Last name"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
-                className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-blue-500 text-gray-700 placeholder:text-gray-400"
+                className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
               />
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function Signup() {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-blue-500 text-gray-700 placeholder:text-gray-400"
+              className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
             />
           </div>
 
@@ -126,7 +126,7 @@ export default function Signup() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="pl-9 pr-10 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-blue-500 text-gray-700 placeholder:text-gray-400"
+              className="pl-9 pr-10 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
             />
             <button
               type="button"
@@ -145,7 +145,7 @@ export default function Signup() {
               placeholder="Confirm password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="pl-9 pr-10 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-blue-500 text-gray-700 placeholder:text-gray-400"
+              className="pl-9 pr-10 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
             />
             <button
               type="button"
@@ -162,15 +162,15 @@ export default function Signup() {
               id="terms"
               checked={agreedToTerms}
               onCheckedChange={(v) => setAgreedToTerms(v as boolean)}
-              className="mt-0.5 data-[state=checked]:bg-green-600 data-[state=checked]:border-green-600 w-4 h-4 shrink"
+              className="mt-0.5 data-[state=checked]:bg-[#0f766e] data-[state=checked]:border-[#0f766e] w-4 h-4 shrink"
             />
             <Label htmlFor="terms" className="text-sm text-gray-600 cursor-pointer whitespace-nowrap">
               I agree to the
-              <button className="text-green-600 hover:text-green-700 font-medium transition-colors hover:cursor-pointer">
+              <button className="text-[#ff7f50] hover:text-[#f536ca] font-medium transition-colors hover:cursor-pointer">
                 Terms 
               </button>
               and
-              <button className="text-green-600 hover:text-green-700 font-medium transition-colors hover:cursor-pointer">
+              <button className="text-[#ff7f50] hover:text-[#f536ca] font-medium transition-colors hover:cursor-pointer">
                 Privacy Policy
               </button>
             </Label>
@@ -179,7 +179,7 @@ export default function Signup() {
           {/* Sign Up Button */}
           <Button
             onClick={handleSubmit}
-            className="w-full h-11 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg text-sm transition-all shadow-sm hover:shadow-md mb-4 hover:cursor-pointer"
+            className="w-full h-11 bg-[#0f766e] hover:bg-[#0d655d] text-white font-semibold rounded-lg text-sm transition-all shadow-sm hover:shadow-md mb-4 hover:cursor-pointer"
           >
             Create Account
           </Button>
@@ -190,7 +190,7 @@ export default function Signup() {
             
           </p>
           <button onClick={() => navigate({ to: "/" })} 
-          className="text-green-600 hover:text-green-700 font-semibold transition-colors hover:cursor-pointer">
+          className="text-[#ff7f50] hover:text-[#f536ca] font-semibold transition-colors hover:cursor-pointer">
               Log in
             </button>
         </div>
@@ -198,7 +198,7 @@ export default function Signup() {
         {/* Right Panel */}
         <div
           className="hidden md:flex flex-1 relative"
-          style={{ background: "linear-gradient(135deg, #14532d 0%, #16a34a 50%, #22c55e 100%)" }}
+          style={{ background: "#0f766e" }}
         >
           <AuthImage />
         </div>

@@ -71,12 +71,12 @@ function FAQItem({ faq }: { faq: (typeof faqs)[0] }) {
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left p-6 rounded-xl border border-slate-200 bg-white hover:border-emerald-300 hover:bg-emerald-50/50 transition-all group cursor-pointer"
+        className="w-full text-left p-6 rounded-xl border border-slate-200 bg-white hover:border-[#0f766e] hover:bg-[#ecfdfb] transition-all group cursor-pointer"
       >
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-start gap-4 flex-1">
             <div className="mt-1 shrink-0">
-              <FiHelpCircle className="w-5 h-5 text-emerald-600 group-hover:text-emerald-700 transition-colors" />
+              <FiHelpCircle className="w-5 h-5 text-[#0f766e] group-hover:text-[#ff7f50] transition-colors" />
             </div>
             <h3 className="text-lg font-semibold text-slate-900 text-left">
               {faq.question}
@@ -87,7 +87,7 @@ function FAQItem({ faq }: { faq: (typeof faqs)[0] }) {
             transition={{ duration: 0.3 }}
             className="shrink-0"
           >
-            <FiChevronDown className="w-5 h-5 text-slate-600 group-hover:text-emerald-600 transition-colors" />
+            <FiChevronDown className="w-5 h-5 text-slate-600 group-hover:text-[#0f766e] transition-colors" />
           </motion.div>
         </div>
       </button>
@@ -107,7 +107,7 @@ function FAQItem({ faq }: { faq: (typeof faqs)[0] }) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.1 }}
-              className="px-6 pb-6 pt-2 text-slate-600 leading-relaxed border-l-2 border-emerald-400 ml-10"
+              className="px-6 pb-6 pt-2 text-slate-600 leading-relaxed border-l-2 border-[#ff7f50] ml-10"
             >
               {faq.answer}
             </motion.div>
@@ -121,7 +121,7 @@ function FAQItem({ faq }: { faq: (typeof faqs)[0] }) {
 export default function FAQSection() {
   return (
     <motion.section
-      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-emerald-50/50 to-white"
+      className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -136,7 +136,7 @@ export default function FAQSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3">
+          <p className="text-xs font-bold text-[#0f766e] uppercase tracking-widest mb-3">
             Questions?
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
@@ -162,7 +162,7 @@ export default function FAQSection() {
 
         {/* Still Have Questions */}
         <motion.div
-          className="mt-12 p-8 rounded-2xl bg-linear-to-r from-emerald-600 to-cyan-600 text-white text-center"
+          className="mt-12 p-8 rounded-2xl bg-[#0f766e] text-white text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -176,7 +176,7 @@ export default function FAQSection() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-2 rounded-full font-semibold bg-white text-emerald-600 hover:bg-slate-100 transition-colors"
+            className="px-6 py-2 rounded-full font-semibold bg-white text-[#0f766e] hover:bg-slate-100 transition-colors"
           >
             Contact Support
           </motion.button>

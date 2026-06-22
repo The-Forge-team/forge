@@ -30,7 +30,7 @@ function NavLinks({ activeSection }: { activeSection: string }) {
             className={`relative px-1 py-0.5 text-[8px] md:px-3 md:py-1 md:text-sm rounded-sm md:rounded-xl transition-colors duration-200 whitespace-nowrap ${
               isActive
                 ? "text-white"
-                : "text-zinc-700 hover:text-green-800 hover:underline"
+                : "text-zinc-700 hover:text-[#0f766e] hover:underline"
             }`}
           >
             {isActive && (
@@ -57,7 +57,7 @@ function AuthButtons() {
         onClick={() => navigate({ to: "/" })}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className="text-[7px] md:text-sm font-medium text-zinc-700 hover:text-white px-1 py-0.5 md:px-3 md:py-1 rounded-sm md:rounded-xl border border-white/0.08 hover:border-green-500 hover:bg-green-500 transition-all whitespace-nowrap cursor-pointer"
+        className="text-[7px] md:text-sm font-medium text-zinc-700 hover:text-white px-1 py-0.5 md:px-3 md:py-1 rounded-sm md:rounded-xl border border-white/0.08 hover:border-[#0f766e] hover:bg-[#0f766e] transition-all whitespace-nowrap cursor-pointer"
       >
         Log In
       </motion.button>
@@ -68,8 +68,7 @@ function AuthButtons() {
         whileTap={{ scale: 0.97 }}
         className="relative inline-flex items-center gap-0 md:gap-1 text-[7px] md:text-sm font-semibold text-white px-1 py-0.5 md:px-3 md:py-1 rounded-sm md:rounded-xl overflow-hidden group whitespace-nowrap cursor-pointer"
       >
-        <span className="absolute inset-0 bg-linear-to-r from-green-300 to-green-600" />
-        <span className="absolute inset-0 bg-green-700 transition-opacity duration-300" />
+        <span className="absolute inset-0 bg-[#ff7f50] transition-opacity duration-300" />
         <span className="relative flex items-center gap-0.5 md:gap-1">
           Sign Up
           <FiArrowRight className="text-[7px] md:text-xs transition-transform duration-200 group-hover:translate-x-0.5" />

@@ -6,12 +6,28 @@ interface StatCardProps {
   suffix?: string;
   label: string;
   delay?: number;
+  tone?: "teal" | "coral" | "pink";
 }
 
-function StatCard({ value, suffix = "", label, delay = 0 }: StatCardProps) {
+function StatCard({ value, suffix = "", label, delay = 0, tone = "teal" }: StatCardProps) {
   const [count, setCount] = useState(0);
   const [isInView, setIsInView] = useState(false);
   const ref = useRef(null);
+
+  const toneClasses = {
+    teal: {
+      card: "bg-[#ecfdfb] border-[#0f766e]/20 hover:border-[#0f766e]",
+      value: "text-[#0f766e]",
+    },
+    coral: {
+      card: "bg-[#fff5f0] border-[#ff7f50]/20 hover:border-[#ff7f50]",
+      value: "text-[#ff7f50]",
+    },
+    pink: {
+      card: "bg-[#fdf2f8] border-[#f536ca]/20 hover:border-[#f536ca]",
+      value: "text-[#f536ca]",
+    },
+  }[tone];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -62,9 +78,9 @@ function StatCard({ value, suffix = "", label, delay = 0 }: StatCardProps) {
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true }}
       whileHover={{ scale: 1.05 }}
-      className="text-center p-6 rounded-xl bg-linear-to-br from-emerald-50 to-cyan-50 border border-emerald-200 cursor-pointer hover:border-emerald-400 transition-colors"
+      className={`text-center p-6 rounded-xl border cursor-pointer transition-colors ${toneClasses.card}`}
     >
-      <div className="text-4xl sm:text-5xl font-bold text-emerald-600 mb-2">
+      <div className={`text-4xl sm:text-5xl font-bold mb-2 ${toneClasses.value}`}>
         {count}
         {suffix}
       </div>
@@ -91,7 +107,7 @@ export default function StatsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900">
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#0f766e]">
             By The Numbers
           </h2>
           <p className="text-lg text-slate-600 mt-4 max-w-2xl mx-auto">
@@ -101,10 +117,10 @@ export default function StatsSection() {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          <StatCard value={1000} suffix="+" label="Professionals" delay={0} />
-          <StatCard value={200} suffix="+" label="Meetups Hosted" delay={0.2} />
-          <StatCard value={50} suffix="+" label="Cities" delay={0.4} />
-          <StatCard value={10000} suffix="+" label="Projects Created" delay={0.6} />
+          <StatCard value={1000} suffix="+" label="Professionals" delay={0} tone="teal" />
+          <StatCard value={200} suffix="+" label="Meetups Hosted" delay={0.2} tone="coral" />
+          <StatCard value={50} suffix="+" label="Cities" delay={0.4} tone="pink" />
+          <StatCard value={10000} suffix="+" label="Projects Created" delay={0.6} tone="teal" />
         </div>
       </div>
     </motion.section>
