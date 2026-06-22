@@ -13,10 +13,8 @@ import ScrollProgressBar from "@/components/ScrollProgressBar";
 export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-white overflow-hidden">
-      {/* Scroll Progress Bar */}
       <ScrollProgressBar />
 
-      {/* Animated background elements */}
       <BackgroundElements />
 
       <Navbar />

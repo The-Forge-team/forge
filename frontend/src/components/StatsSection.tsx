@@ -95,14 +95,14 @@ export default function StatsSection() {
             By The Numbers
           </h2>
           <p className="text-lg text-slate-600 mt-4 max-w-2xl mx-auto">
-            Join a thriving community of developers making real connections
+            Join a thriving community of tech professionals making real connections
           </p>
         </motion.div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          <StatCard value={150000} suffix="+" label="Developers" delay={0} />
-          <StatCard value={5000} suffix="+" label="Meetups Hosted" delay={0.2} />
+          <StatCard value={1000} suffix="+" label="Professionals" delay={0} />
+          <StatCard value={200} suffix="+" label="Meetups Hosted" delay={0.2} />
           <StatCard value={50} suffix="+" label="Cities" delay={0.4} />
           <StatCard value={10000} suffix="+" label="Projects Created" delay={0.6} />
         </div>

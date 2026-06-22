@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FiArrowRight, FiZap } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 import { useNavigate } from "@tanstack/react-router";
 import ForgeLogo from "@/assets/forge-logo.png";
-
-// ── Types ─────────────────────────────────────────────────────────────────────
 
 interface NavLink {
   label: string;
   href: string;
 }
 
-// ── Constants ─────────────────────────────────────────────────────────────────
 
 const NAV_LINKS: NavLink[] = [
   { label: "Features", href: "#features" },
@@ -20,7 +17,6 @@ const NAV_LINKS: NavLink[] = [
   { label: "Explore", href: "#explore" },
 ];
 
-// ── Nav Links ─────────────────────────────────────────────────────────────────
 
 function NavLinks({ activeSection }: { activeSection: string }) {
   return (
@@ -34,7 +30,7 @@ function NavLinks({ activeSection }: { activeSection: string }) {
             className={`relative px-1 py-0.5 text-[8px] md:px-3 md:py-1 md:text-sm rounded-sm md:rounded-xl transition-colors duration-200 whitespace-nowrap ${
               isActive
                 ? "text-white"
-                : "text-zinc-400 hover:text-green-800 hover:underline"
+                : "text-zinc-700 hover:text-green-800 hover:underline"
             }`}
           >
             {isActive && (
@@ -52,39 +48,29 @@ function NavLinks({ activeSection }: { activeSection: string }) {
   );
 }
 
-// ── Auth Buttons ───────────────────────────────────────────────────────────────
-
 function AuthButtons() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex items-center gap-1 md:gap-2 shrink-0">
-      {/* Log In — ghost style */}
+    <div className="flex items-center gap-2 md:gap-2 shrink-0">
       <motion.button
         onClick={() => navigate({ to: "/" })}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className="text-[7px] md:text-sm font-medium text-zinc-400 hover:text-white px-1 py-0.5 md:px-3 md:py-1 rounded-sm md:rounded-xl border border-white/0.08 hover:border-green-500 hover:bg-green-500 transition-all whitespace-nowrap cursor-pointer"
+        className="text-[7px] md:text-sm font-medium text-zinc-700 hover:text-white px-1 py-0.5 md:px-3 md:py-1 rounded-sm md:rounded-xl border border-white/0.08 hover:border-green-500 hover:bg-green-500 transition-all whitespace-nowrap cursor-pointer"
       >
         Log In
       </motion.button>
 
-      {/* Sign Up — gradient */}
       <motion.button
         onClick={() => navigate({ to: "/signup" })}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         className="relative inline-flex items-center gap-0 md:gap-1 text-[7px] md:text-sm font-semibold text-white px-1 py-0.5 md:px-3 md:py-1 rounded-sm md:rounded-xl overflow-hidden group whitespace-nowrap cursor-pointer"
       >
-        {/* Base gradient */}
         <span className="absolute inset-0 bg-linear-to-r from-green-300 to-green-600" />
-        {/* Hover gradient overlay */}
-        <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-linear-to-r from-green-300 to-green-600 transition-opacity duration-300" />
-        {/* Glow on hover */}
-        <span className="absolute inset-0 opacity-0 group-hover:opacity-60 blur-md bg-green-500 transition-opacity duration-300" />
-        {/* Content */}
+        <span className="absolute inset-0 bg-green-700 transition-opacity duration-300" />
         <span className="relative flex items-center gap-0.5 md:gap-1">
-          <FiZap className="text-amber-300 text-[7px] md:text-xs" />
           Sign Up
           <FiArrowRight className="text-[7px] md:text-xs transition-transform duration-200 group-hover:translate-x-0.5" />
         </span>
@@ -92,8 +78,6 @@ function AuthButtons() {
     </div>
   );
 }
-
-// ── Navbar ─────────────────────────────────────────────────────────────────────
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -125,6 +109,7 @@ export default function Navbar() {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
 
+  // NOTE - remove logo background
   return (
     <>
       <motion.header
@@ -141,7 +126,7 @@ export default function Navbar() {
           <img
             src={ForgeLogo}
             alt="Forge Icon"
-            className="h-7 w-7 md:h-9 md:w-9"
+            className="h-15 w-15 md:h-15 md:w-15"
           />
           <NavLinks activeSection={activeSection} />
           <AuthButtons />

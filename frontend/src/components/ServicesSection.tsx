@@ -4,8 +4,8 @@ import { FiArrowRight } from "react-icons/fi";
 const services = [
   {
     id: 1,
-    title: "Find Developers",
-    description: "Connect with talented developers in your city",
+    title: "Find Tech Professionals",
+    description: "Connect with professionals in your city",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
     color: "from-blue-500 to-cyan-500",
   },

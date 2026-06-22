@@ -54,7 +54,7 @@ export default function CTASection() {
             variants={itemVariants}
             className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto"
           >
-            Join our thriving community of developers and start your journey today
+            Join our thriving community of tech professionals and start your journey today
           </motion.p>
           <motion.button
             variants={itemVariants}

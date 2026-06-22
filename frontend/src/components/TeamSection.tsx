@@ -73,14 +73,14 @@ export default function TeamSection() {
               Welcome to <br /> the Forge
             </h2>
             <p className="text-slate-600 text-lg">
-              Our thriving community of developers is ready to connect, collaborate, and build amazing things together.
+              Our thriving community of tech professionals is ready to connect, collaborate, and build amazing things together.
             </p>
           </motion.div>
 
           {/* Right - Description */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <p className="text-slate-600 leading-relaxed">
-              Join thousands of talented developers across 50+ cities worldwide. Whether you're looking to learn, collaborate on side projects, or find your next opportunity, Forge is your platform.
+              Join thousands of people across 50+ cities worldwide. Whether you're looking to learn, collaborate on side projects, or find your next opportunity, Forge is your platform.
             </p>
           </motion.div>
 
@@ -105,10 +105,9 @@ export default function TeamSection() {
               key={member.id}
               variants={itemVariants}
               whileHover={{ scale: 1.1, y: -10 }}
-              className="relative"
-              style={{
-                height: idx % 2 === 0 ? "180px" : "150px",
-              }}
+              className={`relative flex flex-col items-center ${
+                idx % 2 === 0 ? "mt-0" : "mt-8"
+              }`}
             >
               {/* Circle Container */}
               <div
@@ -126,7 +125,7 @@ export default function TeamSection() {
               </div>
 
               {/* Info Card Below */}
-              <motion.div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full pt-4 text-center">
+              <motion.div className="mt-4 text-center">
                 <p className="font-semibold text-slate-900 text-sm">{member.name}</p>
                 <p className="text-xs text-slate-500">{member.role}</p>
               </motion.div>

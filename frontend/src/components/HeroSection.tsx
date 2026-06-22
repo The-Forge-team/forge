@@ -51,7 +51,7 @@ export default function HeroSection() {
             <motion.div variants={itemVariants} className="mb-6">
               <span className="inline-flex items-center gap-2 text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-4 py-2 rounded-full w-fit">
                 <FiZap className="w-4 h-4" />
-                HELLO DEVELOPER
+                HELLO TECH PEEPX!!!
               </span>
             </motion.div>
 
@@ -60,10 +60,10 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-5xl sm:text-6xl font-bold mb-4 leading-tight text-slate-900"
             >
-              We live and breathe
+              Tech People,
               <br />
               <span className="bg-linear-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
-                community.
+                Real Connections
               </span>
             </motion.h1>
 
@@ -72,7 +72,7 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-slate-600 mb-8 max-w-md text-lg"
             >
-              Connect with developers, build projects together, and grow your network in ways you never imagined.
+              Connect with amazing tech enthusiasts, build projects together, and grow your network in ways you never imagined.
             </motion.p>
 
             {/* CTA Section */}
@@ -103,12 +103,12 @@ export default function HeroSection() {
             {/* Stats */}
             <motion.div variants={itemVariants} className="flex items-center gap-8">
               <div>
-                <div className="text-2xl font-bold text-emerald-600">150K+</div>
-                <div className="text-sm text-slate-500">developers using Forge</div>
+                <div className="text-2xl font-bold text-emerald-600">10K+</div>
+                <div className="text-sm text-slate-500">cool people using Forge</div>
               </div>
               <div className="w-px h-12 bg-slate-200"></div>
               <div>
-                <div className="text-2xl font-bold text-emerald-600">5K+</div>
+                <div className="text-2xl font-bold text-emerald-600">200+</div>
                 <div className="text-sm text-slate-500">meetups hosted</div>
               </div>
             </motion.div>
@@ -119,7 +119,6 @@ export default function HeroSection() {
             variants={itemVariants}
             className="relative h-96 lg:h-125 flex items-center justify-center"
           >
-            {/* Background Decorative Gradient Box */}
             <motion.div
               className="absolute inset-0 rounded-3xl bg-linear-to-br from-emerald-100 to-cyan-100 transform rotate-3"
               animate={{ rotate: [3, 8, 3] }}

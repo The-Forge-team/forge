@@ -22,7 +22,8 @@ const itemVariants = {
 
 export default function CommunitySection() {
   const reasons = [
-    "Connect with developers from around the world",
+    "Connect with developers, cybersecurity analysts",
+     "Data Scientists, AI Engineers, Tech Content Creators and many more from around the world",
     "Discover and attend local tech meetups",
     "Build your professional network",
     "Find your next job or team",
