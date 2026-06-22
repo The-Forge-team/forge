@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "@tanstack/react-router";
+import { Code2, Handshake, Laptop, Rocket } from "lucide-react";
 import { FiArrowRight, FiZap } from "react-icons/fi";
 
 const itemVariants = {
@@ -137,37 +138,35 @@ export default function HeroSection() {
 
             {/* Floating Elements */}
             <motion.div
-              className="absolute top-10 right-10 w-20 h-20 bg-emerald-100 rounded-2xl flex items-center justify-center text-3xl border-2 border-emerald-300 shadow-lg"
+              className="absolute top-8 left-8 w-20 h-20 bg-blue-100 rounded-3xl flex items-center justify-center text-blue-400 border-2 border-emerald-300 shadow-lg"
+              animate={{ x: [0, -10, 0], rotate: [0, -8, 0] }}
+              transition={{ duration: 6, repeat: Infinity, delay: 0.4 }}
+            >
+              <Handshake className="w-11 h-11" aria-hidden="true" />
+            </motion.div>
+
+            <motion.div
+              className="absolute top-10 right-10 w-20 h-20 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-700 border-2 border-cyan-300 shadow-lg"
               animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
             >
-              💻
+              <Laptop className="w-9 h-9" aria-hidden="true" />
             </motion.div>
 
             <motion.div
-              className="absolute bottom-20 left-0 w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center text-2xl border-2 border-cyan-300 shadow-lg"
+              className="absolute bottom-20 left-0 w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center text-pink-700 border-2 border-cyan-300 shadow-lg"
               animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
               transition={{ duration: 5, repeat: Infinity, delay: 0.2 }}
             >
-              🚀
+              <Rocket className="w-8 h-8" aria-hidden="true" />
             </motion.div>
 
             <motion.div
-              className="absolute top-1/3 -right-4 w-24 h-24 bg-blue-100 rounded-3xl flex items-center justify-center text-4xl border-2 border-blue-300 shadow-lg"
-              animate={{ x: [0, 15, 0], rotate: [0, 10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, delay: 0.4 }}
+              className="absolute bottom-8 right-8 w-20 h-20 bg-amber-100 rounded-3xl flex items-center justify-center text-red-500 border-2 border-amber-300 shadow-lg"
+              animate={{ y: [0, 10, 0], rotate: [0, 10, 0] }}
+              transition={{ duration: 5.5, repeat: Infinity, delay: 0.6 }}
             >
-              🤝
-            </motion.div>
-
-            {/* Bottom Right Stats Card */}
-            <motion.div
-              className="absolute bottom-6 -right-6 bg-white rounded-xl p-4 shadow-xl border border-slate-200 z-20"
-              animate={{ x: [0, 10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, delay: 0.6 }}
-            >
-              <div className="text-sm font-bold text-slate-900">2,450</div>
-              <div className="text-xs text-slate-500">developers online</div>
+              <Code2 className="w-10 h-10" aria-hidden="true" />
             </motion.div>
           </motion.div>
         </motion.div>
