@@ -73,7 +73,7 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-slate-600 mb-8 max-w-md text-lg"
             >
-              Connect with amazing tech enthusiasts, build projects together, and grow your network in ways you never imagined.
+              Connect with amazing tech professionals, build projects together, and grow your network in ways you never imagined.
             </motion.p>
 
             {/* CTA Section */}
