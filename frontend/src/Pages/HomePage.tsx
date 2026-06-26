@@ -4,7 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import TeamSection from "@/components/TeamSection";
 import StatsSection from "@/components/StatsSection";
-import SkillsSection from "@/components/SkillsSection";
+// import SkillsSection from "@/components/SkillsSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
@@ -24,7 +24,7 @@ export default function HomePage() {
         <ServicesSection />
         <TeamSection />
         <StatsSection />
-        <SkillsSection />
+        {/* <SkillsSection /> */}
         <TestimonialSection />
         <FAQSection />
         <CTASection />

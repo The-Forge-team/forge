@@ -16,9 +16,6 @@ import AuthImage from "../../components/AuthImage.tsx";
 import ForgeLogo from "@/assets/forge-logo.png";
 
 
-
-
-
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -61,14 +58,14 @@ export default function Signup() {
           <div className="flex gap-3 mb-5">
             <Button
               variant="outline"
-              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-[#ecfdfb] hover:border-[#0f766e] rounded-lg hover:cursor-pointer"
+              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-[#ecfdfb] hover:border-[#0f766e] hover:text-black rounded-lg hover:cursor-pointer"
             >
               <FcGoogle size={18} />
               Google
             </Button>
             <Button
               variant="outline"
-              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-[#fdf2f8] hover:border-[#f536ca] rounded-lg hover:cursor-pointer"
+              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-[#ecfdfb] hover:border-[#0f766e] hover:text-black rounded-lg hover:cursor-pointer"
             >
               <FaGithub size={18} color="#1877F2" />
               Github
@@ -91,7 +88,7 @@ export default function Signup() {
                 placeholder="First name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
+                className="pl-9 h-11 border-gray-200 rounded-lg text-sm  text-gray-700 placeholder:text-gray-400"
               />
             </div>
             <div className="relative flex-1">
@@ -101,7 +98,7 @@ export default function Signup() {
                 placeholder="Last name"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
-                className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
+                className="pl-9 h-11 border-gray-200 rounded-lg text-sm text-gray-700 placeholder:text-gray-400"
               />
             </div>
           </div>
@@ -114,7 +111,7 @@ export default function Signup() {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
+              className="pl-9 h-11 border-gray-200 rounded-lg text-sm text-gray-700 placeholder:text-gray-400"
             />
           </div>
 
@@ -126,7 +123,7 @@ export default function Signup() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="pl-9 pr-10 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
+              className="pl-9 pr-10 h-11 border-gray-200 rounded-lg text-smtext-gray-700 placeholder:text-gray-400"
             />
             <button
               type="button"
@@ -145,7 +142,7 @@ export default function Signup() {
               placeholder="Confirm password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="pl-9 pr-10 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
+              className="pl-9 pr-10 h-11 border-gray-200 rounded-lg text-sm text-gray-700 placeholder:text-gray-400"
             />
             <button
               type="button"
@@ -166,11 +163,11 @@ export default function Signup() {
             />
             <Label htmlFor="terms" className="text-sm text-gray-600 cursor-pointer whitespace-nowrap">
               I agree to the
-              <button className="text-[#ff7f50] hover:text-[#f536ca] font-medium transition-colors hover:cursor-pointer">
+              <button className="text-[#0f766e] font-medium transition-colors hover:cursor-pointer">
                 Terms 
               </button>
               and
-              <button className="text-[#ff7f50] hover:text-[#f536ca] font-medium transition-colors hover:cursor-pointer">
+              <button className="text-[#0f766e] font-medium transition-colors hover:cursor-pointer">
                 Privacy Policy
               </button>
             </Label>
@@ -189,8 +186,8 @@ export default function Signup() {
             Already have an account?{" "}
             
           </p>
-          <button onClick={() => navigate({ to: "/" })} 
-          className="text-[#ff7f50] hover:text-[#f536ca] font-semibold transition-colors hover:cursor-pointer">
+          <button onClick={() => navigate({ to: "/login" })}
+          className="text-[#0f766e] font-semibold transition-colors hover:cursor-pointer">
               Log in
             </button>
         </div>

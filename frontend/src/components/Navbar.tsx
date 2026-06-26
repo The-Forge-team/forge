@@ -52,12 +52,12 @@ function AuthButtons() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex items-center gap-2 md:gap-2 shrink-0">
+    <div className="flex items-center gap-4 md:gap-4 shrink-0">
       <motion.button
-        onClick={() => navigate({ to: "/" })}
+        onClick={() => navigate({ to: "/login" })}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className="text-[7px] md:text-sm font-medium text-zinc-700 hover:text-white px-1 py-0.5 md:px-3 md:py-1 rounded-sm md:rounded-xl border border-white/0.08 hover:border-[#0f766e] hover:bg-[#0f766e] transition-all whitespace-nowrap cursor-pointer"
+        className="text-[7px] md:text-sm font-medium text-zinc-700 hover:text-white px-2 py-2 md:px-3 md:py-1 rounded-sm md:rounded-xl border border-white/0.08 hover:border-[#0f766e] hover:bg-[#0f766e] transition-all whitespace-nowrap cursor-pointer"
       >
         Log In
       </motion.button>
@@ -66,9 +66,9 @@ function AuthButtons() {
         onClick={() => navigate({ to: "/signup" })}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className="relative inline-flex items-center gap-0 md:gap-1 text-[7px] md:text-sm font-semibold text-white px-1 py-0.5 md:px-3 md:py-1 rounded-sm md:rounded-xl overflow-hidden group whitespace-nowrap cursor-pointer"
+        className="relative inline-flex items-center gap-0 md:gap-1 text-[7px] md:text-sm font-semibold text-white px-2 py-2 md:px-3 md:py-1 rounded-sm md:rounded-xl overflow-hidden group whitespace-nowrap cursor-pointer"
       >
-        <span className="absolute inset-0 bg-[#ff7f50] transition-opacity duration-300" />
+        <span className="absolute inset-0 bg-[#0f766e] transition-opacity duration-300" />
         <span className="relative flex items-center gap-0.5 md:gap-1">
           Sign Up
           <FiArrowRight className="text-[7px] md:text-xs transition-transform duration-200 group-hover:translate-x-0.5" />

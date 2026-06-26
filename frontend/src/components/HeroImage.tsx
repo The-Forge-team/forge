@@ -1,7 +1,5 @@
 import { FiZap, FiCode, FiUsers, FiTrendingUp, FiAward } from "react-icons/fi";
 
-// ── Floating Card — Winning Results ──────────────────────────────────────────
-
 function WinningCard() {
   return (
     <div className="absolute top-4 right-0 z-20 w-40 rounded-2xl bg-[#0f0f1a]/95 border border-white/0.1 backdrop-blur-xl p-3.5 shadow-2xl shadow-black/40">

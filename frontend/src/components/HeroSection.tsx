@@ -138,7 +138,7 @@ export default function HeroSection() {
 
             {/* Floating Elements */}
             <motion.div
-              className="absolute top-8 left-8 w-20 h-20 bg-[#f536ca]/10 rounded-3xl flex items-center justify-center text-[#f536ca] border-2 border-[#f536ca]/25 shadow-lg"
+              className="absolute top-8 left-8 w-20 h-20 bg-[#f536ca]/10 rounded-3xl flex items-center justify-center text-blue-500 border-2 border-[#f536ca]/25 shadow-lg"
               animate={{ x: [0, -10, 0], rotate: [0, -8, 0] }}
               transition={{ duration: 6, repeat: Infinity, delay: 0.4 }}
             >
@@ -146,7 +146,7 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="absolute top-10 right-10 w-20 h-20 bg-[#0f766e]/10 rounded-2xl flex items-center justify-center text-[#0f766e] border-2 border-[#0f766e]/25 shadow-lg"
+              className="absolute top-10 right-10 w-20 h-20 bg-[#0f766e]/10 rounded-2xl flex items-center justify-center text-emerald-500 border-2 border-[#0f766e]/25 shadow-lg"
               animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
             >
@@ -154,7 +154,7 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="absolute bottom-20 left-0 w-16 h-16 bg-[#ff7f50]/10 rounded-full flex items-center justify-center text-[#ff7f50] border-2 border-[#ff7f50]/25 shadow-lg"
+              className="absolute bottom-20 left-0 w-16 h-16 bg-[#ff7f50]/10 rounded-full flex items-center justify-center text-pink-400 border-2 border-[#ff7f50]/25 shadow-lg"
               animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
               transition={{ duration: 5, repeat: Infinity, delay: 0.2 }}
             >
@@ -162,7 +162,7 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div
-              className="absolute bottom-8 right-8 w-20 h-20 bg-[#f536ca]/10 rounded-3xl flex items-center justify-center text-[#f536ca] border-2 border-[#f536ca]/25 shadow-lg"
+              className="absolute bottom-8 right-8 w-20 h-20 bg-[#f536ca]/10 rounded-3xl flex items-center justify-center text-purple-400 border-2 border-[#f536ca]/25 shadow-lg"
               animate={{ y: [0, 10, 0], rotate: [0, 10, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, delay: 0.6 }}
             >

@@ -13,8 +13,6 @@ import { FaGithub } from "react-icons/fa";
 import AuthImage from "../../components/AuthImage.tsx";
 import ForgeLogo from "@/assets/forge-logo.png";
 
-
-
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -59,14 +57,14 @@ export default function LoginPage() {
           <div className="flex gap-3 mb-5">
             <Button
               variant="outline"
-              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-[#ecfdfb] hover:border-[#0f766e] rounded-lg hover:cursor-pointer"
+              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-[#ecfdfb] hover:border-[#0f766e] hover:text-black rounded-lg hover:cursor-pointer"
             >
               <FcGoogle size={18} />
               Google
             </Button>
             <Button
               variant="outline"
-              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-[#fdf2f8] hover:border-[#f536ca] rounded-lg hover:cursor-pointer"
+              className="flex-1 h-11 flex items-center justify-center gap-2 text-sm font-medium text-gray-700 border-gray-200 hover:bg-[#ecfdfb] hover:border-[#0f766e] hover:text-black rounded-lg hover:cursor-pointer"
             >
               <FaGithub size={18} color="#1877F2" />
               Github
@@ -93,7 +91,7 @@ export default function LoginPage() {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="pl-9 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
+              className="pl-9 h-11 border-gray-200 rounded-lg text-sm text-gray-700 placeholder:text-gray-400"
             />
           </div>
 
@@ -108,7 +106,7 @@ export default function LoginPage() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="pl-9 pr-10 h-11 border-gray-200 rounded-lg text-sm focus-visible:ring-[#0f766e] text-gray-700 placeholder:text-gray-400"
+              className="pl-9 pr-10 h-11 border-gray-200 rounded-lg text-sm text-gray-700 placeholder:text-gray-400"
             />
             <button
               type="button"
@@ -140,7 +138,7 @@ export default function LoginPage() {
               </Label>
             </div>
             <button
-            className="text-sm text-[#ff7f50] hover:text-[#f536ca] font-medium transition-colors hover:cursor-pointer"
+            className="text-xs text-red-400 font-medium transition-colors hover:cursor-pointer"
               onClick={() => navigate({ to: "/forgotpassword" })}
             >
               Forgot Password?
@@ -160,7 +158,7 @@ export default function LoginPage() {
             Don't have an account?{" "}
             <button
               onClick={() => navigate({ to: "/signup" })}
-              className="text-[#ff7f50] hover:text-[#f536ca] font-semibold transition-colors hover:cursor-pointer"
+              className="text-[#0f766e] font-semibold transition-colors hover:cursor-pointer"
             >
               Create an account
             </button>

@@ -61,7 +61,7 @@ export default function CTASection() {
             onClick={handleGetStarted}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full font-semibold text-white bg-[#ff7f50] hover:bg-[#f536ca] shadow-lg shadow-black/10 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full font-semibold text-white bg-[#ff7f50] shadow-lg shadow-black/10 transition-all cursor-pointer"
           >
             Start Your Journey
             <FiArrowRight className="w-5 h-5" />
