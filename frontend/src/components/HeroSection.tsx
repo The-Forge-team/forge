@@ -48,14 +48,6 @@ export default function HeroSection() {
         >
           {/* LEFT SIDE */}
           <motion.div className="flex flex-col">
-            {/* Badge */}
-            <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-flex items-center gap-2 text-xs font-bold text-[#0f766e] bg-[#ecfdfb] border border-[#0f766e]/20 px-4 py-2 rounded-full w-fit">
-                <FiZap className="w-4 h-4" />
-                HELLO TECH PEEPX!!!
-              </span>
-            </motion.div>
-
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
