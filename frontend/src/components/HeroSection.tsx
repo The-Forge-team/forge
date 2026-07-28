@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "@tanstack/react-router";
 import { Code2, Handshake, Laptop, Rocket } from "lucide-react";
-import { FiArrowRight, FiZap } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
