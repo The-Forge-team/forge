@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import { useNavigate } from "@tanstack/react-router";
+import { useNavigate, Link } from "@tanstack/react-router";
 import ForgeLogo from "@/assets/forge-logo.png";
 
 interface NavLink {
@@ -12,7 +12,7 @@ interface NavLink {
 
 const NAV_LINKS: NavLink[] = [
   { label: "Features", href: "#features" },
-  { label: "Gamification", href: "#gamification" },
+  { label: "Gamification", href: "/gamification" },
   { label: "Community", href: "#community" },
 ];
 
@@ -22,16 +22,22 @@ function NavLinks({ activeSection }: { activeSection: string }) {
     <nav className="flex items-center gap-0.5 md:gap-2 flex-nowrap min-w-0">
       {NAV_LINKS.map(({ label, href }) => {
         const isActive = activeSection === label.toLowerCase();
+        const className = `relative px-1 py-0.5 text-[8px] md:px-3 md:py-1 md:text-sm rounded-sm md:rounded-xl transition-colors duration-200 whitespace-nowrap ${
+          isActive
+            ? "text-white"
+            : "text-zinc-700 hover:text-[#0f766e] hover:underline"
+        }`;
+
+        if (href.startsWith("/")) {
+          return (
+            <Link key={label} to={href} className={className}>
+              <span className="relative">{label}</span>
+            </Link>
+          );
+        }
+
         return (
-          <a
-            key={label}
-            href={href}
-            className={`relative px-1 py-0.5 text-[8px] md:px-3 md:py-1 md:text-sm rounded-sm md:rounded-xl transition-colors duration-200 whitespace-nowrap ${
-              isActive
-                ? "text-white"
-                : "text-zinc-700 hover:text-[#0f766e] hover:underline"
-            }`}
-          >
+          <a key={label} href={href} className={className}>
             {isActive && (
               <motion.span
                 layoutId="nav-pill"
