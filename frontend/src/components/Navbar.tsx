@@ -14,6 +14,7 @@ const NAV_LINKS: NavLink[] = [
   { label: "Features", href: "#features" },
   { label: "Gamification", href: "#gamification" },
   { label: "Community", href: "#community" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 
