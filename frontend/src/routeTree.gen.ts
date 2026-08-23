@@ -13,6 +13,7 @@ import { Route as SignupRouteImport } from './routes/signup'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as HomepageRouteImport } from './routes/homepage'
 import { Route as ForgotpasswordRouteImport } from './routes/forgotpassword'
+import { Route as CommunitypageRouteImport } from './routes/communitypage'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SignupRoute = SignupRouteImport.update({
@@ -35,6 +36,11 @@ const ForgotpasswordRoute = ForgotpasswordRouteImport.update({
   path: '/forgotpassword',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CommunitypageRoute = CommunitypageRouteImport.update({
+  id: '/communitypage',
+  path: '/communitypage',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,6 +49,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/communitypage': typeof CommunitypageRoute
   '/forgotpassword': typeof ForgotpasswordRoute
   '/homepage': typeof HomepageRoute
   '/login': typeof LoginRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/communitypage': typeof CommunitypageRoute
   '/forgotpassword': typeof ForgotpasswordRoute
   '/homepage': typeof HomepageRoute
   '/login': typeof LoginRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/communitypage': typeof CommunitypageRoute
   '/forgotpassword': typeof ForgotpasswordRoute
   '/homepage': typeof HomepageRoute
   '/login': typeof LoginRoute
@@ -65,14 +74,34 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/forgotpassword' | '/homepage' | '/login' | '/signup'
+  fullPaths:
+    | '/'
+    | '/communitypage'
+    | '/forgotpassword'
+    | '/homepage'
+    | '/login'
+    | '/signup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/forgotpassword' | '/homepage' | '/login' | '/signup'
-  id: '__root__' | '/' | '/forgotpassword' | '/homepage' | '/login' | '/signup'
+  to:
+    | '/'
+    | '/communitypage'
+    | '/forgotpassword'
+    | '/homepage'
+    | '/login'
+    | '/signup'
+  id:
+    | '__root__'
+    | '/'
+    | '/communitypage'
+    | '/forgotpassword'
+    | '/homepage'
+    | '/login'
+    | '/signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CommunitypageRoute: typeof CommunitypageRoute
   ForgotpasswordRoute: typeof ForgotpasswordRoute
   HomepageRoute: typeof HomepageRoute
   LoginRoute: typeof LoginRoute
@@ -109,6 +138,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForgotpasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/communitypage': {
+      id: '/communitypage'
+      path: '/communitypage'
+      fullPath: '/communitypage'
+      preLoaderRoute: typeof CommunitypageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -121,6 +157,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CommunitypageRoute: CommunitypageRoute,
   ForgotpasswordRoute: ForgotpasswordRoute,
   HomepageRoute: HomepageRoute,
   LoginRoute: LoginRoute,

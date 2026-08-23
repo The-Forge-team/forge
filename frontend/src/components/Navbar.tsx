@@ -1,37 +1,35 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import { useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import ForgeLogo from "@/assets/forge-logo.png";
 
 interface NavLink {
   label: string;
-  href: string;
+  href?: string;
+  to?: string;
 }
 
 
 const NAV_LINKS: NavLink[] = [
   { label: "Features", href: "#features" },
   { label: "Gamification", href: "#gamification" },
-  { label: "Community", href: "#community" },
+  { label: "Community", to: "/communitypage" },
 ];
 
 
 function NavLinks({ activeSection }: { activeSection: string }) {
   return (
     <nav className="flex items-center gap-0.5 md:gap-2 flex-nowrap min-w-0">
-      {NAV_LINKS.map(({ label, href }) => {
+      {NAV_LINKS.map(({ label, href, to }) => {
         const isActive = activeSection === label.toLowerCase();
-        return (
-          <a
-            key={label}
-            href={href}
-            className={`relative px-1 py-0.5 text-[8px] md:px-3 md:py-1 md:text-sm rounded-sm md:rounded-xl transition-colors duration-200 whitespace-nowrap ${
-              isActive
-                ? "text-white"
-                : "text-zinc-700 hover:text-[#0f766e] hover:underline"
-            }`}
-          >
+        const className = `relative px-1 py-0.5 text-[8px] md:px-3 md:py-1 md:text-sm rounded-sm md:rounded-xl transition-colors duration-200 whitespace-nowrap ${
+          isActive
+            ? "text-white"
+            : "text-zinc-700 hover:text-[#0f766e] hover:underline"
+        }`;
+        const content = (
+          <>
             {isActive && (
               <motion.span
                 layoutId="nav-pill"
@@ -40,6 +38,20 @@ function NavLinks({ activeSection }: { activeSection: string }) {
               />
             )}
             <span className="relative">{label}</span>
+          </>
+        );
+
+        if (to) {
+          return (
+            <Link key={label} to={to} className={className}>
+              {content}
+            </Link>
+          );
+        }
+
+        return (
+          <a key={label} href={href} className={className}>
+            {content}
           </a>
         );
       })}
@@ -88,7 +100,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const ids = NAV_LINKS.map((l) => l.href.replace("#", ""));
+    const ids = NAV_LINKS.filter((l) => l.href).map((l) => l.href!.replace("#", ""));
     const observers: IntersectionObserver[] = [];
 
     ids.forEach((id) => {
